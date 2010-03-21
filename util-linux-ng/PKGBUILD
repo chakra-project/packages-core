@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=util-linux-ng
 pkgver=2.17.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Miscellaneous system utilities for Linux"
 url="http://userweb.kernel.org/~kzak/util-linux-ng/"
 arch=('i686' 'x86_64')

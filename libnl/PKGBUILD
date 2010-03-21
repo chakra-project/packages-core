@@ -3,7 +3,7 @@
 # Contributor: William Rea <sillywilly@gmail.com>
 pkgname=libnl
 pkgver=1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Library for applications dealing with netlink sockets"
 arch=('i686' 'x86_64')
 url="http://people.suug.ch/~tgr/libnl"

@@ -3,7 +3,7 @@
 
 pkgname=shadow
 pkgver=4.1.4.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Shadow password file utilities"
 arch=('i686' 'x86_64')
 url='http://pkg-shadow.alioth.debian.org/'

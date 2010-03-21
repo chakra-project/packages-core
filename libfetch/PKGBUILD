@@ -4,7 +4,7 @@
 
 pkgname=libfetch
 pkgver=2.30
-pkgrel=1
+pkgrel=2
 pkgdesc="URL based download library"
 arch=('i686' 'x86_64')
 license=('BSD')

@@ -4,7 +4,7 @@
 
 pkgname=bzip2
 pkgver=1.0.5
-pkgrel=5
+pkgrel=6
 pkgdesc="A high-quality data compression program"
 arch=('i686' 'x86_64')
 license=('custom')

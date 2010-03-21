@@ -4,7 +4,7 @@
 pkgname=man-pages
 pkgver=3.24
 _posixver=2003-a
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux man pages"
 arch=(i686 x86_64)
 license=('GPL')

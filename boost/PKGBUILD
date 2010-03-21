@@ -7,7 +7,7 @@
 pkgname=boost
 pkgver=1.41.0
 _boostver=1_41_0
-pkgrel=1
+pkgrel=2
 pkgdesc="Free peer-reviewed portable C++ source libraries"
 arch=('i686' 'x86_64')
 url="http://www.boost.org/"

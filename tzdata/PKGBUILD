@@ -3,7 +3,7 @@
 
 pkgname=tzdata
 pkgver=2010b
-pkgrel=1
+pkgrel=2
 _tzcode=2009t
 _tzdata=2010b
 pkgdesc="Sources for time zone and daylight saving time data"

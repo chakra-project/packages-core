@@ -4,7 +4,7 @@
 
 pkgname=mpfr
 pkgver=2.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc="multiple-precision floating-point library"
 arch=(i686 x86_64)
 license=('LGPL')

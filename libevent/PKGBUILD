@@ -4,7 +4,7 @@
 
 pkgname=libevent
 pkgver=1.4.13
-pkgrel=1
+pkgrel=2
 pkgdesc="An event notification library"
 license=('GPL2')
 arch=('i686' 'x86_64')

@@ -3,7 +3,7 @@
 
 pkgname=tar
 pkgver=1.22
-pkgrel=1
+pkgrel=2
 pkgdesc="Utility used to store, backup, and transport files"
 arch=('i686' 'x86_64')
 license=('GPL3')

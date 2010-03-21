@@ -4,7 +4,7 @@
 
 pkgname=pkgconfig
 pkgver=0.23
-pkgrel=1
+pkgrel=2
 pkgdesc="A system for managing library compile/link flags"
 arch=(i686 x86_64)
 url="http://pkgconfig.freedesktop.org/wiki/"

@@ -4,7 +4,7 @@
 
 pkgname=initscripts
 pkgver=2010.01
-pkgrel=1
+pkgrel=2
 pkgdesc="System initialization/bootup scripts"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org"

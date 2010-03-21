@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=groff
 pkgver=1.20.1
-pkgrel=5
+pkgrel=6
 pkgdesc="GNU troff text-formatting system"
 arch=(i686 x86_64)
 url="http://www.gnu.org/software/groff/groff.html"

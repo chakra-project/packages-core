@@ -4,7 +4,7 @@
 
 pkgname=sysvinit
 pkgver=2.86
-pkgrel=5
+pkgrel=6
 pkgdesc="Linux System V Init"
 arch=('i686' 'x86_64')
 url="http://freshmeat.net/projects/sysvinit/"

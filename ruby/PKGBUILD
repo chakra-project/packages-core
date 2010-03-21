@@ -6,7 +6,7 @@
 pkgname=('ruby' 'ruby-docs')
 pkgver=1.9.1_p378
 _pkgver=1.9.1-p378
-pkgrel=1
+pkgrel=2
 pkgdesc="An object-oriented language for quick and easy programming"
 arch=('i686' 'x86_64')
 license=('custom')

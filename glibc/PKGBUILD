@@ -7,7 +7,7 @@
 
 pkgname=glibc
 pkgver=2.11.1
-pkgrel=2
+pkgrel=3
 _glibcdate=20091212
 pkgdesc="GNU C Library"
 arch=('i686' 'x86_64')

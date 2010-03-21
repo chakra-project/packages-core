@@ -4,7 +4,7 @@
 
 pkgname=cloog-ppl
 pkgver=0.15.7
-pkgrel=2
+pkgrel=3
 pkgdesc="Library that generates loops for scanning polyhedra"
 arch=('i686' 'x86_64')
 url="http://www.cloog.org/"

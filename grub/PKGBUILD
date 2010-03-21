@@ -3,7 +3,7 @@
 
 pkgname=grub
 pkgver=0.97
-pkgrel=16
+pkgrel=17
 pkgdesc="A GNU multiboot boot loader"
 arch=('i686' 'x86_64')
 license=('GPL')

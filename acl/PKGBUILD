@@ -2,7 +2,7 @@
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 pkgname=acl
 pkgver=2.2.48
-pkgrel=1
+pkgrel=2
 pkgdesc="Library for filesystem ACL support"
 arch=('i686' 'x86_64')
 url="http://oss.sgi.com/projects/xfs/"

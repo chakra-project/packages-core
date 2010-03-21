@@ -3,7 +3,7 @@
 
 pkgname=openssl
 pkgver=0.9.8m
-pkgrel=2
+pkgrel=3
 pkgdesc='The Open Source toolkit for Secure Sockets Layer and Transport Layer Security'
 arch=('i686' 'x86_64')
 url='http://www.openssl.org'

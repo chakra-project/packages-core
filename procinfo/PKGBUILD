@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=procinfo
 pkgver=19
-pkgrel=3
+pkgrel=4
 pkgdesc="Displays useful information from /proc"
 arch=(i686 x86_64) 
 license=('GPL')

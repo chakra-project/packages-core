@@ -4,7 +4,7 @@
 
 pkgname=ppl
 pkgver=0.10.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A modern library for convex polyhedra and other numerical abstractions."
 arch=('i686' 'x86_64')
 url="http://www.cs.unipr.it/ppl"
