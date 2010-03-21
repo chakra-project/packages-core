@@ -86,30 +86,32 @@ build_it()
 			if [ "$_build_autoinstall" = "1" ] ; then
 			# Look for the exact package names :
 
-				pushd ${_build_work}/${module} &>/dev/null || exit 1
+# 				pushd ${_build_work}/${module} &>/dev/null || exit 1
+# 
+# 				# get the pkgnames, different for an array and a bare string
+# 				if [ `grep -e "^pkgname=" PKGBUILD | cut -d'=' -f2 | cut -c1` == "(" ] ; then
+# 					# fetch the array
+# 					_module_names=`pcregrep -M "^pkgname=\(.*(\n.*[^\)\n])*" PKGBUILD | sed s/"^[^\']*"//g | sed s/[^\']$//`
+# 				else
+# 					_module_names=("`grep -e "^pkgname=" PKGBUILD | cut -d'=' -f2`")
+# 				fi
+# 
+# 				# version and rel
+# 				#_modver=`grep -e "^pkgver=" PKGBUILD | cut -d'=' -f2`
+# 				#_modrel=`grep -e "^pkgrel=" PKGBUILD | cut -d'=' -f2`
+# 
+# 				popd &>/dev/null
+# 
+# 				# build a list of packages and install them at once
+# 				_packages_to_install=
+# 				for _m in $_module_names ; do 
+# 					#_pkg_full_name=`eval echo $_m-$_modver-$_modrel-*.pkg.*`
+# 					_pkg_full_name=`eval echo $_m-*.pkg.*`
+# 					_packages_to_install="$_packages_to_install $PKGDEST/$_pkg_full_name"
+# 				done
+# 				sudo pacman -Uf $_packages_to_install || exit 1
 
-				# get the pkgnames, different for an array and a bare string
-				if [ `grep -e "^pkgname=" PKGBUILD | cut -d'=' -f2 | cut -c1` == "(" ] ; then
-					# fetch the array
-					_module_names=`pcregrep -M "^pkgname=\(.*(\n.*[^\)\n])*" PKGBUILD | sed s/"^[^\']*"//g | sed s/[^\']$//`
-				else
-					_module_names=("`grep -e "^pkgname=" PKGBUILD | cut -d'=' -f2`")
-				fi
-
-				# version and rel
-				#_modver=`grep -e "^pkgver=" PKGBUILD | cut -d'=' -f2`
-				#_modrel=`grep -e "^pkgrel=" PKGBUILD | cut -d'=' -f2`
-
-				popd &>/dev/null
-
-				# build a list of packages and install them at once
-				_packages_to_install=
-				for _m in $_module_names ; do 
-					#_pkg_full_name=`eval echo $_m-$_modver-$_modrel-*.pkg.*`
-					_pkg_full_name=`eval echo $_m-*.pkg.*`
-					_packages_to_install="$_packages_to_install $PKGDEST/$_pkg_full_name"
-				done
-				sudo pacman -Uf $_packages_to_install || exit 1
+				pacman -U _repo/build/${module}*.pkg.*
 			fi
 
 	popd &>/dev/null
