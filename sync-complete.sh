@@ -24,7 +24,7 @@ sync_complete()
 	
 	# move new packages from $ROOT/repos/$REPO/build into thr repo dir 
         title2 "adding new packages"
-        mv -v _repo/build/*.pkg.tar.gz _repo/repo/
+        mv -v _repo/build/*.pkg.* _repo/repo/
 
         # run repo-clean on it
         title2 "running repo-clean"
@@ -34,7 +34,7 @@ sync_complete()
         title2 "creating pacman database"
 	rm -rf _repo/repo/*.db.tar.gz
         pushd _repo/repo/
-        repo-add $_pkgprefix-$_cur_repo.db.tar.gz *.pkg.tar.gz
+        repo-add $_cur_repo.db.tar.gz *.pkg.*
         popd
 
         # sync local -> server

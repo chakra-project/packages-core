@@ -7,7 +7,7 @@
 
 pkgname=glibc
 pkgver=2.11.1
-pkgrel=1
+pkgrel=2
 _glibcdate=20091212
 pkgdesc="GNU C Library"
 arch=('i686' 'x86_64')
@@ -105,4 +105,6 @@ build() {
     cd ${pkgdir}/lib64
     ln -v -s ../lib/ld* .
   fi
+
+  rm -rf $pkgdir/usr/share/info/dir
 }

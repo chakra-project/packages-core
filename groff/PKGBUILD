@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=groff
 pkgver=1.20.1
-pkgrel=4
+pkgrel=5
 pkgdesc="GNU troff text-formatting system"
 arch=(i686 x86_64)
 url="http://www.gnu.org/software/groff/groff.html"
@@ -36,4 +36,6 @@ build() {
     $pkgdir/usr/share/groff/site-tmac/man.local
   cat $srcdir/site.tmac >> \
     $pkgdir/usr/share/groff/site-tmac/mdoc.local
+
+  rm -rf $pkgdir/usr/share/info/dir
 }

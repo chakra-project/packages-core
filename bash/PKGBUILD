@@ -4,7 +4,7 @@
 pkgname=bash
 _patchlevel=002 #prepare for some patches
 pkgver=4.1.$_patchlevel
-pkgrel=2
+pkgrel=3
 pkgdesc="The GNU Bourne Again shell"
 arch=('i686' 'x86_64')
 license=('GPL')
@@ -52,11 +52,13 @@ build() {
   mkdir -p ${pkgdir}/etc/skel/
   install -D -m644 ${srcdir}/bashrc ${pkgdir}/etc/skel/.bashrc
   echo ". \$HOME/.bashrc" >${pkgdir}/etc/skel/.bash_profile
+
+  rm -rf $pkgdir/usr/share/info/dir
 }
 
 md5sums=('9800d8724815fd84994d9be65ab5e7b8'
          '17f20ec69535a2f50f2112a8c700630d'
-         '3d2837e84645eac9bde399b58014bafa'
+         '98a1c465933f18c1337d31620523010d'
          '51725defa4c2dec49c1bc15883e0bee2'
          '196697769f1667a8a1aed608811129c6'
          '582dea5671b557f783e18629c2f77b68'
