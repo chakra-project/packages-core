@@ -15,7 +15,7 @@ source=(Makefile
         ftp://ftp.archlinux.org/other/$pkgname/$pkgname-$pkgver.tar.gz)
 
 # keep an upgrade path for older installations
-PKGEXT='.pkg.tar.gz'
+# PKGEXT='.pkg.tar.gz'
 
 # source PKGBUILD && mksource
 mksource() {

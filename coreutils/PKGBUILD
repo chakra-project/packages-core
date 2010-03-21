@@ -22,12 +22,14 @@ source=(ftp://ftp.gnu.org/gnu/$pkgname/$pkgname-$pkgver.tar.gz
 	coreutils-uname.patch
 	coreutils-pam.patch
 	coreutils-6.10-configuration.patch
+	advcopy-0.2b-8.4.patch
 	su)
 md5sums=('56f549854d723d9dcebb77919019df55'
          'f88e6b4ce09e6d453f595d46d2a153b2'
          'c4fcca138b6abf6d443d48a6f0cd8833'
          '7efee4d5b3653711f9e229493316841c'
          'dd4f472de8380104af3ac0ef920fae8b'
+         '57e881e7968d6747dba774128a830350'
          'fa85e5cce5d723275b14365ba71a8aad')
 
 build() {
@@ -37,6 +39,7 @@ build() {
   patch -Np1 -i $srcdir/coreutils-pam.patch || return 1
   patch -Np1 -i $srcdir/coreutils-i18n.patch || return 1
   patch -Np1 -i $srcdir/coreutils-6.10-configuration.patch || return 1
+  patch -Np1 -i $srcdir/advcopy-0.2b-8.4.patch || return 1
 
   # from gentoo portage
   patch -Np1 -i $srcdir/coreutils-uname.patch || return 1

@@ -11,8 +11,8 @@ url="http://www.archlinux.org/pacman/"
 license=('GPL')
 groups=('base')
 depends=('bash' 'libarchive>=2.7.1' 'libfetch>=2.25' 'pacman-mirrorlist')
-optdepends=('fakeroot: for makepkg usage as normal user'
-            'python: for rankmirrors script usage')
+optdepends=('fakeroot: for makepkg usage as normal user')
+           # 'python: for rankmirrors script usage'
 backup=(etc/pacman.conf etc/makepkg.conf)
 install=pacman.install
 options=(!libtool)
