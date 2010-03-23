@@ -1,20 +1,22 @@
-# $Id: PKGBUILD 69080 2010-02-17 04:05:55Z dan $
+# $Id: PKGBUILD 72377 2010-03-15 07:06:13Z dan $
 # Maintainer: Dan McGee <dan@archlinux.org>
 # Maintainer: Aaron Griffin <aaron@archlinux.org>
 pkgname=libarchive
-pkgver=2.8.0
-pkgrel=2
+pkgver=2.8.3
+pkgrel=1
 pkgdesc="library that can create and read several streaming archive formats"
 arch=(i686 x86_64)
 url="http://libarchive.googlecode.com/"
 license=('BSD')
-groups=('base')
 depends=('zlib' 'bzip2' 'xz-utils' 'acl' 'openssl' 'expat')
 source=(http://libarchive.googlecode.com/files/libarchive-$pkgver.tar.gz)
 
 # pacman.static build fails unless we keep the libtool files (or unless we link
 # the missing symbols inside the libarchive .a static lib, but that is dirty)
 options=(libtool)
+
+# keep an upgrade path for older installations
+# PKGEXT='.pkg.tar.gz'
 
 build() {
   cd $startdir/src/$pkgname-$pkgver
@@ -32,4 +34,5 @@ package() {
   install -m644 COPYING $startdir/pkg/usr/share/licenses/libarchive/
 }
 
-md5sums=('400fd9ba51fffe6c65c75387fffba9d9')
+md5sums=('fe8d917e101d4b37580124030842a1d0')
+sha256sums=('16095d15334b3c8dbb02db5af3d415f12c1c3bdd4eb43af7bbc36ab7572c0b7a')
