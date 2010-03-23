@@ -1,8 +1,10 @@
 #! /bin/bash
 
+#   gen-rebuild-list, based on
 #   rebuildlist - list packages needing rebuilt for a soname bump
 #
 #   Copyright (c) 2009 by Allan McRae <allan@archlinux.org>
+#   Copyright (c) 2009 by Jan Mette <jan.mette@berlin.de>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -17,27 +19,58 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#
+# setup
+#
+curdir=`pwd`
+repodir="_repo/repo"
 
-if [ -z "$1" -o -z "$2" ]; then
-	echo "Usage $0 <pkg directory> <library1> [<library2> ...]"
+_script_name="GEN REBUILD LIST"
+_build_arch="$_arch"
+_cur_repo=`pwd | awk -F '/' '{print $NF}'`
+_needed_functions="config_handling messages"
+# load functions
+for subroutine in ${_needed_functions}
+do
+    source _buildscripts/functions/${subroutine}
+done
+
+
+#
+# startup
+#
+title "${_script_name}"
+
+check_configs
+load_configs
+
+
+
+if [ -z "$1" ]; then
+	error "Usage: $0 <name of the package to be rebuilt>"
+	newline
 	exit
 fi
 
-directory=$1
-shift
+package="$1"
+liblist=`pacman -Ql $package | grep "\.so" | grep -v "engines" | cut -d " " -f 2 | awk 'BEGIN {FS="/"} {print $NF}' | cut -d "." -f 1 | uniq | tr '\n' ' '`
 
-while [ -n "$1" ]; do
-	grepexpr="$grepexpr -e ${1%%.so}.so"
-	shift
+directory="$curdir/$repodir"
+
+for solib in $liblist; do
+	grepexpr="$grepexpr -e ${solib%%.so}.so"
 done
 
 startdir=$(pwd)
 tmpdir=$(mktemp -d)
 cd $tmpdir
 
-for pkg in $(ls $directory/*.pkg.tar.gz); do
+newline
+title2 "Scanning packages"
+
+for pkg in $(ls $directory/*.pkg.*); do
 	pkg=${pkg##*\/}
-	echo "Scanning $pkg"
+	status_start "Scanning $pkg"
 	mkdir $tmpdir/extract
 	cp $directory/$pkg $tmpdir/extract
 	cd $tmpdir/extract
@@ -45,10 +78,11 @@ for pkg in $(ls $directory/*.pkg.tar.gz); do
 	rm $pkg
 	found=$(readelf --dynamic $(find -type f) 2>/dev/null | grep $grepexpr | wc -l)
 	if [ $found -ne 0 ]; then
-		echo ${pkg%-*-*-*} >> ../rebuildlist.txt
+		echo ${pkg%-*-*-*} >> ../rebuildlist-$package.txt
 	fi
 	cd ..
 	rm -rf extract
+	status_done
 done
 
-cp $tmpdir/rebuildlist.txt $startdir
+cp $tmpdir/rebuildlist-$package.txt $startdir
