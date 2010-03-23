@@ -53,9 +53,10 @@ if [ -z "$1" ]; then
 fi
 
 package="$1"
-liblist=`pacman -Ql $package | grep "\.so" | grep -v "engines" | cut -d " " -f 2 | awk 'BEGIN {FS="/"} {print $NF}' | cut -d "." -f 1 | uniq | tr '\n' ' '`
+liblist=`pacman -Ql $package | grep "\.so" | cut -d " " -f 2 | awk 'BEGIN {FS="/"} {print $NF}' | cut -d "." -f 1 | uniq | tr '\n' ' '`
 
-directory="$curdir/$repodir"
+#directory="$curdir/$repodir"
+directory="/var/cache/pacman/pkg"
 
 for solib in $liblist; do
 	grepexpr="$grepexpr -e ${solib%%.so}.so"
