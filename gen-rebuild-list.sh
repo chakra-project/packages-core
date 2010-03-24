@@ -1,10 +1,10 @@
 #! /bin/bash
 
-#   gen-rebuild-list, adapted (= f*cked it up) and based on
+#   based on
 #   rebuildlist - list packages needing rebuilt for a soname bump
 #
 #   Copyright (c) 2009 by Allan McRae <allan@archlinux.org>
-#   Copyright (c) 2010 by Jan Mette <jan.mette@berlin.de>
+#   modifications: <jan.mette@berlin.de>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -75,7 +75,7 @@ for pkg in $(ls $directory/*.pkg.*); do
 	mkdir $tmpdir/extract
 	cp $directory/$pkg $tmpdir/extract
 	cd $tmpdir/extract
-	tar -xf $directory/$pkg
+	tar -xf $directory/$pkg 2>/dev/null
 	rm $pkg
 	found=$(readelf --dynamic $(find -type f) 2>/dev/null | grep $grepexpr | wc -l)
 	if [ $found -ne 0 ]; then
@@ -86,4 +86,11 @@ for pkg in $(ls $directory/*.pkg.*); do
 	status_done
 done
 
-cp $tmpdir/rebuildlist-$package.txt $startdir
+status_start "saving rebuildlist-$package.txt"
+	cp $tmpdir/rebuildlist-$package.txt $startdir
+status_done
+
+newline
+title2 "All done"
+newline
+
