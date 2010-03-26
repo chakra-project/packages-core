@@ -30,11 +30,11 @@ fi
 
 list="$1"
 startdir=$(pwd)
-packages=`cat $startdir/rebuildlist-$list.txt | grep -v "$list"`
+packages=`cat $startdir/_temp/rebuildlist-$list.txt | grep -v "$list"`
 
-# pushd $list
-# 	../makepkg -si
-# popd
+pushd $list
+	../makepkg -si
+popd
 
 for pkg in $packages; do
 	pushd $pkg

@@ -62,12 +62,17 @@ for solib in $liblist; do
 	grepexpr="$grepexpr -e ${solib%%.so}.so"
 done
 
+if [ -e "$startdir/_temp/rebuildlist-$package.txt" ]; then
+	rm -rf $startdir/_temp/rebuildlist-$package.txt
+fi
+
 startdir=$(pwd)
 tmpdir=$(mktemp -d)
 cd $tmpdir
 
 newline
 title2 "Scanning packages"
+msg "This can take a lot of time"
 
 for pkg in $(ls $directory/*.pkg.*); do
 	pkg=${pkg##*\/}
@@ -87,7 +92,7 @@ for pkg in $(ls $directory/*.pkg.*); do
 done
 
 status_start "saving rebuildlist-$package.txt"
-	cp $tmpdir/rebuildlist-$package.txt $startdir
+	cp $tmpdir/rebuildlist-$package.txt $startdir/_temp/
 status_done
 
 newline
