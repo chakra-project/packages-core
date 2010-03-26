@@ -32,7 +32,7 @@ done
 sync_down()
 {
         export RSYNC_PASSWORD=`echo $_rsync_pass`
-        rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/repo/ 
+        rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/remote/ 
 }
 
 #

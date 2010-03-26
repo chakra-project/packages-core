@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="REPOCLEAN --> REPO"
+_script_name="REPOCLEAN --> BUILD"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"
@@ -31,10 +31,10 @@ done
 #
 cleanup_pkgs()
 { 
-	title2 "Cleaning repo packages"
+	title2 "Cleaning build packages"
 
 	title2 "running repo-clean"
-	repo-clean -m c -s _repo/repo/
+	repo-clean -m c -s _repo/local/
 }
 
 #

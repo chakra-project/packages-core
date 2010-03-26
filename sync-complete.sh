@@ -32,26 +32,26 @@ done
 sync_complete()
 {
         export RSYNC_PASSWORD=`echo $_rsync_pass`
-        rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/repo/
+        rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/remote/
 	
 	# move new packages from $ROOT/repos/$REPO/build into thr repo dir 
         title2 "adding new packages"
-        mv -v _repo/build/*.pkg.* _repo/repo/
+        mv -v _repo/local/*.pkg.* _repo/remote/
 
         # run repo-clean on it
         title2 "running repo-clean"
-        repo-clean -m c -s _repo/repo/
+        repo-clean -m c -s _repo/remote/
 
         # create new pacman database
         title2 "creating pacman database"
-	rm -rf _repo/repo/*.db.tar.gz
-        pushd _repo/repo/
+	rm -rf _repo/remote/*.db.tar.gz
+        pushd _repo/remote/
         repo-add $_cur_repo.db.tar.gz *.pkg.*
         popd
 
         # sync local -> server
         title2 "sync local -> server"
-        rsync -avh --progress --delay-updates --delete-after _repo/repo/ $_rsync_user@$_rsync_server::$_rsync_dir
+        rsync -avh --progress --delay-updates --delete-after _repo/remote/ $_rsync_user@$_rsync_server::$_rsync_dir
 }
 
 #
