@@ -7,14 +7,14 @@
 
 pkgname=repo-clean
 pkgver=0.1.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Clean utility for Pacman repository"
 arch=('i686' 'x86_64')
 url="http://code.google.com/p/repo-clean/"
 license=('GPL')
 depends=('pacman' 'boost') 
 makedepends=('cmake' 'gcc')
-md5sums=('c457e8c37f98e4e9759e410230c028a3')
+md5sums=('7ec184fa2c99584e31b4663cd6424903')
 
 source=(http://konnektion.ath.cx/source/$pkgname/$pkgname-$pkgver.tar.bz2)
 
