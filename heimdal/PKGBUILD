@@ -111,6 +111,4 @@ build() {
   # Install the license
   install -Dm644 ${srcdir}/${pkgname}-${pkgver}/LICENSE \
   	${pkgdir}/usr/share/licenses/${pkgname}/LICENSE || return 1
-
-  rm -rf $pkgdir/usr/share/info/dir
 }
