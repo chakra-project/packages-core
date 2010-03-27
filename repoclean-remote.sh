@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="REPOCLEAN --> REPO"
+_script_name="repoclean remote"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"

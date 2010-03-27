@@ -25,7 +25,7 @@
 curdir=`pwd`
 repodir="_repo/repo"
 
-_script_name="GEN REBUILD LIST"
+_script_name="gen rebuild list"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"
@@ -91,11 +91,11 @@ for pkg in $(ls $directory/*.pkg.*); do
 	status_done
 done
 
-status_start "saving rebuildlist-$package.txt"
+status_start "saving _temp/rebuildlist-$package.txt"
 	cp $tmpdir/rebuildlist-$package.txt $startdir/_temp/
 status_done
 
 newline
-title2 "All done"
+title2 "All done, rebuild list created in _temp/"
 newline
 

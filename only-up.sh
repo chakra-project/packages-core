@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="UPLOAD PACKAGES"
+_script_name="upload packages"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"

@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="CLEAN WORK DIRECTORY"
+_script_name="clean work directory"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"

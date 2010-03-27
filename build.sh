@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="BUILD(ER)"
+_script_name="build(er)"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages dependency_handling"

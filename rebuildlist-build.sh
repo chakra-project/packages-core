@@ -4,7 +4,7 @@
 curdir=`pwd`
 repodir="_repo/repo"
 
-_script_name="GEN REBUILD LIST"
+_script_name="gen rebuild list"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"

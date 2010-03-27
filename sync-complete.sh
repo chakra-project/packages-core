@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="SYNC DOWN/UP PACKAGES"
+_script_name="sync complete"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"
@@ -31,6 +31,7 @@ done
 #
 sync_complete()
 {
+	title2 "syncing down"
         export RSYNC_PASSWORD=`echo $_rsync_pass`
         rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/remote/
 	
@@ -50,7 +51,7 @@ sync_complete()
         popd
 
         # sync local -> server
-        title2 "sync local -> server"
+        title2 "syncing up"
         rsync -avh --progress --delay-updates --delete-after _repo/remote/ $_rsync_user@$_rsync_server::$_rsync_dir
 }
 
@@ -66,6 +67,7 @@ check_rsync
 check_accounts
 
 time sync_complete
+newline
 
 title "All done"
 newline

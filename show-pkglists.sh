@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="PACKAGE LISTS"
+_script_name="package lists"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"

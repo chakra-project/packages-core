@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="SYNC DOWN PACKAGES"
+_script_name="sync down"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"
@@ -31,6 +31,7 @@ done
 #
 sync_down()
 {
+	title2 "syncing down"
         export RSYNC_PASSWORD=`echo $_rsync_pass`
         rsync -avh --progress $_rsync_user@$_rsync_server::$_rsync_dir/* _repo/remote/ 
 }
@@ -47,6 +48,7 @@ check_rsync
 check_accounts
 
 time sync_down
+newline
 
 title "All done"
 newline

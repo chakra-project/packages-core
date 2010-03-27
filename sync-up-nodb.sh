@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="UPLOAD PACKAGES"
+_script_name="sync down nodb"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"
@@ -54,6 +54,7 @@ check_rsync
 check_accounts
 
 time sync_up
+newline
 
 title "All done"
 newline

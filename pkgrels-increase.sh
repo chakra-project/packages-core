@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="INCREASE PKGRELS"
+_script_name="increase pkgrels"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"

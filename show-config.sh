@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="CONFIGURATION"
+_script_name="configuration"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling helpers messages"

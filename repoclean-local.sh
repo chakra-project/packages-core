@@ -16,7 +16,7 @@
 #
 # setup
 #
-_script_name="REPOCLEAN --> BUILD"
+_script_name="repoclean local"
 _build_arch="$_arch"
 _cur_repo=`pwd | awk -F '/' '{print $NF}'`
 _needed_functions="config_handling messages"
