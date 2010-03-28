@@ -16,7 +16,7 @@ depends=('pacman' 'boost')
 makedepends=('cmake' 'gcc')
 md5sums=('7ec184fa2c99584e31b4663cd6424903')
 
-source=(http://konnektion.ath.cx/source/$pkgname/$pkgname-$pkgver.tar.bz2)
+source=(http://konnektion.ath.cx/sources/core/$pkgname/$pkgname-$pkgver.tar.bz2)
 
 build() {
         cd $srcdir/$pkgname-$pkgver

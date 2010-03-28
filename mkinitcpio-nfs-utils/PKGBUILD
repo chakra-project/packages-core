@@ -9,7 +9,7 @@ arch=('i686' 'x86_64')
 url="http://www.archlinux.org/"
 license=('GPL2')
 depends=('glibc')
-source=(ftp://ftp.archlinux.org/other/mkinitcpio/${pkgname}-${pkgver}.tar.gz)
+source=(http://konnektion.ath.cx/sources/core/mkinitcpio/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('3f2839f21a420cd732d34e58f84534acdb7fc29f69381dbba3f00e3424201cd3')
 
 build() {

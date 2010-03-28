@@ -20,7 +20,7 @@ replaces=('glibc-xen')
 backup=(etc/locale.gen
         etc/nscd.conf)
 install=glibc.install
-source=(ftp://ftp.archlinux.org/other/glibc/${pkgname}-${pkgver}_${_glibcdate}.tar.bz2
+source=(http://konnektion.ath.cx/sources/core/glibc/${pkgname}-${pkgver}_${_glibcdate}.tar.bz2
         glibc-2.10-dont-build-timezone.patch
         glibc-2.10-bz4781.patch
         nscd

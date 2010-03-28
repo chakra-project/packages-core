@@ -12,7 +12,7 @@ groups=('base')
 depends=('openssl')
 url="http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/net/libfetch/"
 source=(Makefile
-        ftp://ftp.archlinux.org/other/$pkgname/$pkgname-$pkgver.tar.gz)
+        http://konnektion.ath.cx/sources/core/$pkgname/$pkgname-$pkgver.tar.gz)
 
 # keep an upgrade path for older installations
 # PKGEXT='.pkg.tar.gz'

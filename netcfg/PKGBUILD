@@ -11,7 +11,7 @@ depends=(wireless_tools coreutils "wpa_supplicant>=0.6.8" net-tools "dhcpcd>=4.0
 optdepends=('dialog: Required for menu based profile selector' 
             'wpa_actiond: Required for automatic wireless connection with rc.d/net-auto-wireless'
             'ifplugd: Required for automatic wired connection with rc.d/net-auto-wired')
-source=(ftp://ftp.archlinux.org/other/netcfg/netcfg-${pkgver}.tar.gz)
+source=(http://konnektion.ath.cx/sources/core/netcfg/netcfg-${pkgver}.tar.gz)
 
 arch=(any)
 
