@@ -34,7 +34,7 @@ build() {
    autoreconf || return 1
    ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
                --with-zlib=/usr --with-neon=/usr --without-apxs \
-               --with-sqlite=/usr \
+               --with-sqlite=/usr --without-jdk --without-junit --disable-mod-activation \
                --disable-javahl --without-gnome-keyring --without-kwallet || return 1
 
    # build
@@ -66,8 +66,8 @@ build() {
    make DESTDIR=${pkgdir} swig-rb || return 1
    make install-swig-rb DESTDIR=${pkgdir}  || return 1
 
-   make DESTDIR=${pkgdir} javahl || return 1
-   make DESTDIR=${pkgdir} install-javahl || return 1
+   #make DESTDIR=${pkgdir} javahl || return 1
+   #make DESTDIR=${pkgdir} install-javahl || return 1
 
    mkdir -p ${pkgdir}/etc/rc.d || return 1
    mkdir -p ${pkgdir}/etc/xinetd.d || return 1
