@@ -1,4 +1,4 @@
-# $Id: PKGBUILD 69321 2010-02-20 10:28:43Z tpowa $
+# $Id: PKGBUILD 75208 2010-04-01 02:24:20Z pierre $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: John Proctor <jproctor@prium.net>
 # Contributor: dibblethewrecker <dibblethewrecker.at.jiwe.org>
@@ -7,7 +7,7 @@
 
 pkgname=nfs-utils
 pkgver=1.2.2
-pkgrel=3
+pkgrel=2
 pkgdesc="Support programs for Network File Systems"
 arch=('i686' 'x86_64')
 url='http://nfs.sourceforge.net'
@@ -67,6 +67,10 @@ build() {
 
   unset LDFLAGS
   make || return 1
+}
+
+package() {
+  cd $srcdir/${pkgname}-${pkgver}
   make DESTDIR=$pkgdir install || return 1
 
   # NFS & NFSv4 init scripts

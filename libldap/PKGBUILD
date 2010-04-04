@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 61649 2009-12-21 11:30:16Z andrea $
+# $Id: PKGBUILD 75196 2010-04-01 02:08:56Z pierre $
 # Maintainer: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=libldap
 pkgver=2.4.21
-pkgrel=3	
+pkgrel=2
 pkgdesc="Lightweight Directory Access Protocol (LDAP) client libraries"
 arch=('i686' 'x86_64')
 license=('custom')

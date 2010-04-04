@@ -7,7 +7,7 @@
 pkgname=boost
 pkgver=1.41.0
 _boostver=1_41_0
-pkgrel=2
+pkgrel=1
 pkgdesc="Free peer-reviewed portable C++ source libraries"
 arch=('i686' 'x86_64')
 url="http://www.boost.org/"
@@ -18,7 +18,7 @@ source=(http://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}_${_bo
 	fix-gzip-crc.patch
 	serialization_fix.patch)
 license=('custom')
-options=('!ccache')
+options=('!ccache' 'force')
 
 build() {
   cd "${srcdir}/${pkgname}_${_boostver}"

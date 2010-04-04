@@ -4,7 +4,7 @@
 
 pkgname=sdparm
 pkgver=1.04
-pkgrel=2
+pkgrel=1
 pkgdesc="An utility similar to hdparm but for SCSI devices"
 arch=('i686' 'x86_64')
 url="http://sg.danny.cz/sg/sdparm.html"

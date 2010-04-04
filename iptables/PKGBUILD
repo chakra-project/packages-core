@@ -4,7 +4,7 @@
 
 pkgname=iptables
 pkgver=1.4.7
-pkgrel=2
+pkgrel=1
 pkgdesc="A Linux kernel packet control tool"
 arch=('i686' 'x86_64')
 license=('GPL2')

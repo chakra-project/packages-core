@@ -10,7 +10,7 @@ arch=('any')
 url="http://www.ralinktech.com/"
 license=('custom')
 depends=()
-source=(http://konnektion.ath.cx/sources/core/rt2x00-rt71w-fw/RT71W_Firmware_V${pkgver}.zip)
+source=(ftp://ftp.archlinux.org/other/rt2x00-rt71w-fw/RT71W_Firmware_V${pkgver}.zip)
 md5sums=('1e7a5dc574e0268574fcda3fd5cf52f7')
 
 build() {

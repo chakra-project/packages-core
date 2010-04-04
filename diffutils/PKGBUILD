@@ -4,7 +4,7 @@
 
 pkgname=diffutils
 pkgver=2.9
-pkgrel=3
+pkgrel=1
 pkgdesc="Utility programs used for creating patch files"
 arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/diffutils"
@@ -24,6 +24,4 @@ build() {
 package() {
   cd ${srcdir}/${pkgname}-${pkgver}
   make DESTDIR=${pkgdir} install || return 1
-
-  rm -rf $pkgdir/usr/share/info/dir
 }

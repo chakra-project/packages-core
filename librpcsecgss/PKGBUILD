@@ -1,4 +1,4 @@
-# $Id: PKGBUILD 59635 2009-11-26 00:18:25Z allan $
+# $Id: PKGBUILD 75199 2010-04-01 02:12:58Z pierre $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Andrew Krawchyk <krawch_a@denison.edu>, Marco Lima <cipparello gmail com>
 
@@ -9,7 +9,7 @@ pkgdesc="Library for RPCSECGSS support"
 arch=('i686' 'x86_64')
 url="http://www.citi.umich.edu/projects/nfsv4/linux/"
 license=('GPL')
-depends=('glibc' 'heimdal>=1.3.1')
+depends=('glibc' 'heimdal')
 makedepends=('pkgconfig' 'autoconf')
 options=('!libtool')
 source=("http://www.citi.umich.edu/projects/nfsv4/linux/$pkgname/$pkgname-$pkgver.tar.gz"
@@ -28,7 +28,11 @@ build() {
   autoreconf -i
   
   GSSAPI_CFLAGS='-I/usr/include/gssapi' \
-  ./configure --prefix=/usr 
+  ./configure --prefix=/usr
   make || return 1
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
   make DESTDIR="$pkgdir/" install || return 1
 }

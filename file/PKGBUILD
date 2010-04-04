@@ -4,7 +4,7 @@
 
 pkgname=file
 pkgver=5.04
-pkgrel=3
+pkgrel=2
 pkgdesc="File type identification utility"
 arch=('i686' 'x86_64')
 license=('custom')

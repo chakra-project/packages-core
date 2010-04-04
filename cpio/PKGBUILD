@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=cpio
 pkgver=2.10
-pkgrel=2
+pkgrel=1
 pkgdesc="A tool to copy files into or out of a cpio or tar archive"
 arch=(i686 x86_64)
 license=('GPL')

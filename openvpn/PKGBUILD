@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 66514 2010-01-31 12:58:44Z thomas $
+# $Id: PKGBUILD 75211 2010-04-01 02:26:14Z pierre $
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=openvpn
 pkgver=2.1.1
-pkgrel=3
+pkgrel=2
 pkgdesc="An easy-to-use, robust, and highly configurable VPN (Virtual Private Network)"
 arch=(i686 x86_64)
 url="http://openvpn.net/index.php/open-source.html"

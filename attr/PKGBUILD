@@ -2,7 +2,7 @@
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 pkgname=attr
 pkgver=2.4.44
-pkgrel=2
+pkgrel=1
 pkgdesc="Extended attribute support library for ACL support"
 arch=(i686 x86_64)
 url="http://oss.sgi.com/projects/xfs/"

@@ -1,12 +1,12 @@
-# $Id: PKGBUILD 53824 2009-10-03 13:25:10Z andyrtr $
+# $Id: PKGBUILD 71722 2010-03-08 20:27:01Z andyrtr $
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=man-pages
 pkgver=3.24
 _posixver=2003-a
-pkgrel=2
+pkgrel=1
 pkgdesc="Linux man pages"
-arch=(i686 x86_64)
+arch=('any')
 license=('GPL')
 url="http://www.kernel.org/doc/man-pages/"
 groups=('base')

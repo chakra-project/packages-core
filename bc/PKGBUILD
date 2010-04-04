@@ -3,7 +3,7 @@
 
 pkgname=bc
 pkgver=1.06
-pkgrel=8
+pkgrel=7
 pkgdesc="An arbitrary precision calculator language"
 arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/bc/"
@@ -28,6 +28,4 @@ build() {
     --infodir=/usr/share/info --with-readline || return 1
   make LEX="flex -I" || return 1
   make DESTDIR="${pkgdir}" install || return 1
-
-  rm -rf $pkgdir/usr/share/info/dir
 }

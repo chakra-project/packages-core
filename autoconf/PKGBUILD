@@ -4,7 +4,7 @@
 
 pkgname=autoconf
 pkgver=2.65
-pkgrel=3
+pkgrel=1
 pkgdesc="A GNU tool for automatically configuring source code"
 arch=('any')
 license=('GPL2' 'GPL3' 'custom')
@@ -27,6 +27,4 @@ build() {
 
   # conflict with bintuils
   rm -f ${pkgdir}/usr/share/info/standards.info
-
-  rm -rf $pkgdir/usr/share/info/dir
 }

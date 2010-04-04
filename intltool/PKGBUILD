@@ -4,7 +4,7 @@
 
 pkgname=intltool
 pkgver=0.41.0
-pkgrel=2
+pkgrel=1
 pkgdesc="The internationalization tool collection"
 arch=('any')
 url="https://edge.launchpad.net/intltool"

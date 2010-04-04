@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 52882 2009-09-23 03:39:20Z allan $
+# $Id: PKGBUILD 75183 2010-04-01 01:40:17Z pierre $
 # Maintainer: Allan McRae <allan@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=wget
 pkgver=1.12
-pkgrel=4
+pkgrel=2
 pkgdesc="A network utility to retrieve files from the Web"
 arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/wget/wget.html"
@@ -21,7 +21,9 @@ build() {
   cd ${srcdir}/$pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc
   make || return 1
-  make DESTDIR=${pkgdir} install
+}
 
-  rm -rf $pkgdir/usr/share/info/dir
+package() {
+  cd ${srcdir}/$pkgname-$pkgver
+  make DESTDIR=${pkgdir} install
 }

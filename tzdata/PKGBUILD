@@ -1,29 +1,24 @@
-# $Id: PKGBUILD 68628 2010-02-13 18:36:24Z andyrtr $
+# $Id: PKGBUILD 73970 2010-03-29 16:40:39Z andyrtr $
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=tzdata
-pkgver=2010b
-pkgrel=2
-_tzcode=2009t
-_tzdata=2010b
+pkgver=2010g
+pkgrel=1
+_tzcode=2010f
+_tzdata=2010g
 pkgdesc="Sources for time zone and daylight saving time data"
 arch=('i686' 'x86_64')
 url="http://www.twinsun.com/tz/tz-link.htm"
 license=('GPL')
-groups=('base')
 depends=()
 makedepends=()
 optdepends=('sh: required by tzselect')
 options=('!emptydirs')
-source=(http://icu-project.org/repos/icu/data/trunk/tzdata/mirror/tzcode2009t.tar.gz
-        http://icu-project.org/repos/icu/data/trunk/tzdata/mirror/${pkgname}${_tzdata}.tar.gz \
+source=(ftp://elsie.nci.nih.gov/pub/tzcode${_tzcode}.tar.gz \
+        ftp://elsie.nci.nih.gov/pub/${pkgname}${_tzdata}.tar.gz \
         Makefile.patch)
-
-# 	ftp://elsie.nci.nih.gov/pub/tzcode${_tzcode}.tar.gz \
-# 	ftp://elsie.nci.nih.gov/pub/${pkgname}${_tzdata}.tar.gz \
-
-md5sums=('17fe1e12237b11d490f62dcec4b4bc11'
-         'dfd29a56cb39cc8c57b0939608a054f6'
+md5sums=('e530cc9bbdfd5e8c1eac21a68f4d5656'
+         'd0e8f560977470b0fc65b79b585cf5e4'
          'a64ed97d1fc03c66ee8612c0d9f40507')
 
 build() {

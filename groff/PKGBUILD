@@ -2,15 +2,15 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=groff
 pkgver=1.20.1
-pkgrel=6
+pkgrel=4
 pkgdesc="GNU troff text-formatting system"
 arch=(i686 x86_64)
 url="http://www.gnu.org/software/groff/groff.html"
 license=('GPL')
 depends=('perl' 'gcc-libs' 'texinfo')
-# makedepends=('netpbm' 'psutils' 'ghostscript')
-# optdepends=('netpbm: for use together with man -H command interaction in browsers'
-#             'psutils: for use together with man -H command interaction in browsers')
+makedepends=('netpbm' 'psutils' 'ghostscript')
+optdepends=('netpbm: for use together with man -H command interaction in browsers'
+            'psutils: for use together with man -H command interaction in browsers')
 source=(ftp://ftp.gnu.org/gnu/groff/groff-$pkgver.tar.gz
         site.tmac)
 install=groff.install
@@ -36,6 +36,4 @@ build() {
     $pkgdir/usr/share/groff/site-tmac/man.local
   cat $srcdir/site.tmac >> \
     $pkgdir/usr/share/groff/site-tmac/mdoc.local
-
-  rm -rf $pkgdir/usr/share/info/dir
 }

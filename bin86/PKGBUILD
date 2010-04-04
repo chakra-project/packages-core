@@ -2,7 +2,7 @@
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=bin86
 pkgver=0.16.17
-pkgrel=5
+pkgrel=4
 pkgdesc="A complete 8086 assembler and loader"
 arch=(i686 x86_64)
 license=('GPL')

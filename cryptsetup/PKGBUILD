@@ -2,7 +2,7 @@
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 pkgname=cryptsetup
 pkgver=1.1.0
-pkgrel=3
+pkgrel=2
 pkgdesc="Userspace setup tool for transparent encryption of block devices using the Linux 2.6 cryptoapi"
 arch=(i686 x86_64)
 license=('GPL')

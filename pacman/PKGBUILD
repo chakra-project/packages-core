@@ -1,27 +1,30 @@
-# $Id: PKGBUILD 58635 2009-11-11 00:00:52Z dan $
+# $Id: PKGBUILD 75243 2010-04-01 04:00:30Z allan $
 # Maintainer: Aaron Griffin <aaron@archlinux.org>
 # Maintainer: Dan McGee <dan@archlinux.org>
 
 pkgname=pacman
 pkgver=3.3.3
-pkgrel=2
+pkgrel=4
 pkgdesc="A library-based package manager with dependency support"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org/pacman/"
 license=('GPL')
 groups=('base')
 depends=('bash' 'libarchive>=2.7.1' 'libfetch>=2.25' 'pacman-mirrorlist')
-optdepends=('fakeroot: for makepkg usage as normal user')
-           # 'python: for rankmirrors script usage'
+optdepends=('fakeroot: for makepkg usage as normal user'
+            'python: for rankmirrors script usage')
 backup=(etc/pacman.conf etc/makepkg.conf)
 install=pacman.install
 options=(!libtool)
-source=(http://konnektion.ath.cx/sources/core/pacman/$pkgname-$pkgver.tar.gz
+source=(ftp://ftp.archlinux.org/other/pacman/$pkgname-$pkgver.tar.gz
         pacman.conf
         makepkg.conf)
 md5sums=('a8cef73d68e2a4c3a46fb46c33210719'
          'abe70dabacee7036368c7afeb686eb10'
-         '52c7bc651b107d73f9902755b7594458')
+         '4d2f2f2ac74cba7bd2d336db9135ab16')
+
+# keep an upgrade path for older installations
+PKGEXT='.pkg.tar.gz'
 
 build() {
   cd $srcdir/$pkgname-$pkgver

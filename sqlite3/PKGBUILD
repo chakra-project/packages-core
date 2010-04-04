@@ -1,40 +1,34 @@
-# $Id: PKGBUILD 63193 2010-01-15 20:00:32Z andyrtr $
+# $Id: PKGBUILD 72839 2010-03-20 13:07:52Z andyrtr $
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sqlite3
-pkgver=3.6.22
-pkgrel=2
+pkgver=3.6.23
+pkgrel=1
 pkgdesc="A C library that implements an SQL database engine"
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://www.sqlite.org/"
 depends=('readline>=6.0.00')
-# makedepends=('tcl')
+makedepends=('tcl')
 conflicts=('sqlite')
 replaces=('sqlite')
-source=(#http://www.sqlite.org/sqlite-$pkgver.tar.gz
-	http://www.sqlite.org/sqlite-amalgamation-$pkgver.tar.gz
+source=(http://www.sqlite.org/sqlite-$pkgver.tar.gz
 	license.txt)
 options=(!libtool)
-md5sums=('b683b3903e79ab8a6d928dc9d4a56937'
+md5sums=('5ab08907643eda2aa8bf4e72e7eb31e9'
          'c1cdbc5544034d9012e421e75a5e4890')
 
 build() {
   cd ${srcdir}/sqlite-${pkgver}
-
-  rm -rf src/tclsqlite.c
-
   export LTLINK_EXTRAS="-ldl"
   export CFLAGS="$CFLAGS -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_COLUMN_METADATA=1"
   ./configure --prefix=/usr \
 	--enable-threadsafe \
-	--disable-static || return 1
-
-# 	--enable-threads-override-locks \
-# 	--enable-cross-thread-connections \
-# 	--disable-tcl \
-# 	--enable-load-extension
+	--enable-threads-override-locks \
+	--enable-cross-thread-connections \
+	--disable-static \
+	--enable-load-extension || return 1
 
   # rpath removal
   sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
