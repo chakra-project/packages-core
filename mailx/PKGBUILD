@@ -12,7 +12,7 @@ groups=('base')
 depends=('glibc')
 optdepends=('smtp-forwarder: for sending mail')
 backup=('etc/mail.rc')
-source=(ftp://ftp.archlinux.org/other/mailx/$pkgname-$pkgver-fixed.tar.gz \
+source=(http://konnektion.ath.cx/sources/core/mailx/$pkgname-$pkgver-fixed.tar.gz \
         mailx-$pkgver.patch mailx-gcc4.patch)
 md5sums=('63cad526ac64b57bcba2c0daaa1f3048' '905cfa35b5131524bfec0c677d456bd3'\
          '8716c7c7b3f5d348443230e2fe543bf6')

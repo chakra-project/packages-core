@@ -24,3 +24,6 @@ build() {
   # install config file
   install -D -m644 ../bridges.conf.d $startdir/pkg/etc/conf.d/bridges
 }
+
+md5sums=('0182fcac3a2b307113bbec34e5f1c673'
+         'f5d691282653580dd5fd4a1092ef365b')

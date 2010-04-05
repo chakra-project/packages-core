@@ -9,7 +9,7 @@ arch=('i686' 'x86_64')
 url="http://people.suug.ch/~tgr/libnl"
 license=('GPL')
 depends=('glibc')
-source=(ftp://ftp.archlinux.org/other/libnl/${pkgname}-${pkgver}.tar.gz
+source=(http://konnektion.ath.cx/sources/core/libnl/${pkgname}-${pkgver}.tar.gz
         fix-compilation.patch)
 md5sums=('ae970ccd9144e132b68664f98e7ceeb1'
          'e1f5e82c8aa1b3ad025c7b588178de1e')

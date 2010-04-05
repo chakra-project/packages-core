@@ -17,7 +17,8 @@ depends=('db>=4.8' 'openssl' 'sqlite3' 'e2fsprogs')
 backup=(etc/krb5.conf)
 options=('!libtool' '!emptydirs')
 install=heimdal.install
-source=(http://www.h5l.org/dist/src/${pkgname}-${pkgver}.tar.gz
+source=(#http://www.h5l.org/dist/src/${pkgname}-${pkgver}.tar.gz
+	http://www.sfr-fresh.com/unix/misc/${pkgname}-${pkgver}.tar.gz
 	001_all_heimdal-no_libedit.patch
 	002_all_heimal-fPIC.patch
 	003_all_heimdal-rxapps.patch

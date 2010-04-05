@@ -17,7 +17,7 @@ md5sums=('fe8d917e101d4b37580124030842a1d0')
 options=(libtool)
 
 # keep an upgrade path for older installations
-PKGEXT='.pkg.tar.gz'
+# PKGEXT='.pkg.tar.gz'
 
 build() {
   cd $startdir/src/$pkgname-$pkgver

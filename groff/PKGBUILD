@@ -8,7 +8,7 @@ arch=(i686 x86_64)
 url="http://www.gnu.org/software/groff/groff.html"
 license=('GPL')
 depends=('perl' 'gcc-libs' 'texinfo')
-makedepends=('netpbm' 'psutils' 'ghostscript')
+# makedepends=('netpbm' 'psutils' 'ghostscript')
 optdepends=('netpbm: for use together with man -H command interaction in browsers'
             'psutils: for use together with man -H command interaction in browsers')
 source=(ftp://ftp.gnu.org/gnu/groff/groff-$pkgver.tar.gz

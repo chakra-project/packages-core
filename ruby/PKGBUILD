@@ -11,7 +11,7 @@ pkgdesc="An object-oriented language for quick and easy programming"
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://www.ruby-lang.org/en/"
-makedepends=('gdbm' 'db' 'openssl' 'zlib' 'readline' 'tk')
+makedepends=('gdbm' 'db' 'openssl' 'zlib' 'readline') #'tk'
 source=("ftp://ftp.ruby-lang.org/pub/ruby/1.9/${pkgname}-${_pkgver}.tar.bz2"
         'openssl-1.0.patch')
 options=('!emptydirs')
