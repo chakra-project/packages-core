@@ -1,16 +1,17 @@
-# $Id: PKGBUILD 75427 2010-04-01 14:51:32Z giovanni $
+# $Id: PKGBUILD 77223 2010-04-11 14:13:33Z pierre $
 # Maintainer: Paul Mattal <paul@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=subversion
 pkgver=1.6.9
-pkgrel=4
+pkgrel=5
 pkgdesc="Replacement for CVS, another versioning system (svn)"
 arch=('i686' 'x86_64')
 license=('apache' 'bsd')
 depends=('neon' 'apr-util')
-makedepends=('heimdal' 'python' 'perl' 'swig' 'ruby'
-             'autoconf' 'sqlite3' 'db' 'e2fsprogs') # 'java-runtime' 'kdelibs' 'libgnome-keyring' 'apache' 
+makedepends=('heimdal' 'apache' 'python' 'perl' 'swig' 'ruby' 'java-runtime' 
+             'autoconf' 'sqlite3' 'db' 'e2fsprogs' 'libgnome-keyring' 
+'kdelibs')
 source=(http://subversion.tigris.org/downloads/$pkgname-$pkgver.tar.bz2
         svnserve svn svnserve.conf svnmerge.py
         subversion.rpath.fix.patch
@@ -33,9 +34,9 @@ build() {
    # configure
    autoreconf || return 1
    ./configure --prefix=/usr --with-apr=/usr --with-apr-util=/usr \
-               --with-zlib=/usr --with-neon=/usr --without-apxs \
-               --with-sqlite=/usr --without-jdk --without-junit --disable-mod-activation \
-               --disable-javahl --without-gnome-keyring --without-kwallet || return 1
+               --with-zlib=/usr --with-neon=/usr --with-apxs \
+               --with-sqlite=/usr \
+               --enable-javahl --with-gnome-keyring --with-kwallet || return 1
 
    # build
    (make external-all && make LT_LDFLAGS="-L$Fdestdir/usr/lib" local-all ) \
@@ -66,8 +67,8 @@ build() {
    make DESTDIR=${pkgdir} swig-rb || return 1
    make install-swig-rb DESTDIR=${pkgdir}  || return 1
 
-#    make DESTDIR=${pkgdir} javahl || return 1
-#    make DESTDIR=${pkgdir} install-javahl || return 1
+   make DESTDIR=${pkgdir} javahl || return 1
+   make DESTDIR=${pkgdir} install-javahl || return 1
 
    mkdir -p ${pkgdir}/etc/rc.d || return 1
    mkdir -p ${pkgdir}/etc/xinetd.d || return 1

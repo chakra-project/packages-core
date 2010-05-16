@@ -1,21 +1,22 @@
-# $Id: PKGBUILD 72383 2010-03-15 11:02:00Z pierre $
+# $Id: PKGBUILD 78261 2010-04-20 06:46:21Z pierre $
 # Maintainer: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=zlib
-pkgver=1.2.4
+pkgver=1.2.5
 pkgrel=1
 pkgdesc='Compression library implementing the deflate compression method found in gzip and PKZIP'
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://www.zlib.net/"
 depends=('glibc')
+options=('!makeflags')
 source=("http://zlib.net/zlib-${pkgver}.tar.gz")
-md5sums=('47f6ed51b3c83a8534f9228531effa18')
+md5sums=('c735eab2d659a96e5a594c9e8541ad63')
 
 build() {
 	cd ${srcdir}/zlib-$pkgver
 	export CFLAGS="${CFLAGS/-O2/-O3} -DUNALIGNED_OK"
-	./configure --prefix=/usr --shared
+	./configure --prefix=/usr
 	make || return 1
 
 	grep -A 24 '^  Copyright' zlib.h > LICENSE

@@ -7,19 +7,21 @@
 
 pkgname=repo-clean
 pkgver=0.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Clean utility for Pacman repository"
 arch=('i686' 'x86_64')
 url="http://code.google.com/p/repo-clean/"
 license=('GPL')
 depends=('pacman' 'boost') 
 makedepends=('cmake' 'gcc')
-md5sums=('7ec184fa2c99584e31b4663cd6424903')
+source=(http://chakra-project.org/source/$pkgname-$pkgver.tar.bz2
+            repo_clean_xz.patch)
 
-source=(http://konnektion.ath.cx/sources/core/$pkgname/$pkgname-$pkgver.tar.bz2)
-
+md5sums=('a133d3cc8d740e8a2f78e958e10b117c'
+         'b1ca28279da1bbe35b887b2ef2ad2305')
 build() {
-        cd $srcdir/$pkgname-$pkgver
+	cd $srcdir/$pkgname-$pkgver
+	patch -Np1 -i $startdir/repo_clean_xz.patch || return 1
 	
 	cmake -DCMAKE_INSTALL_PREFIX=/usr .
 	make

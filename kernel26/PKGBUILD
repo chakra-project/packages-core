@@ -1,27 +1,27 @@
-# $Id: PKGBUILD 72469 2010-03-16 16:57:13Z thomas $
+# $Id: PKGBUILD 60356 2009-12-03 23:38:44Z tpowa $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Maintainer: Thomas Baechler <thomas@archlinux.org>
 pkgbase="kernel26"
 pkgname=('kernel26' 'kernel26-firmware' 'kernel26-headers') # Build stock -ARCH kernel
 # pkgname=kernel26-custom       # Build kernel with a different name
 _kernelname=${pkgname#kernel26}
-_basekernel=2.6.32
-pkgver=${_basekernel}.10
-pkgrel=1
-_patchname="patch-${pkgver}-${pkgrel}-ARCH"
+_basekernel=2.6.33
+pkgver=${_basekernel}.4
+pkgrel=1chakra
+_patchname="patch-${pkgver}-1-CHAKRA"
 arch=(i686 x86_64)
 license=('GPL2')
 url="http://www.kernel.org"
 source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
-        http://konnektion.ath.cx/sources/core/kernel26/${_patchname}.bz2
+        ${_patchname}.bz2
         # the main kernel config files
         config config.x86_64
         # standard config files for mkinitcpio ramdisk
         kernel26.preset)
-md5sums=('260551284ac224c3a43c4adac7df4879'
-         'c7f79503ea903b7d8f659c88badd00cb'
-         'c114c5d89622a93165bb948d62d966b5'
-         '5c91374d56f115ba4324978d5b002711'
+md5sums=('c3883760b18d50e8d78819c54d579b00'
+         '4985965d86a3858cab635c7eb1660d41'
+         '0149294fda983d0a4658b9e1a21e8956'
+         '1f24529018de11b9a9f4f30041bd9c0f'
          '25584700a0a679542929c4bed31433b6')
 
 build() {
@@ -29,7 +29,6 @@ build() {
   # Add -ARCH patches
   # See http://projects.archlinux.org/linux-2.6-ARCH.git/
   patch -Np1 -i ${srcdir}/${_patchname} || return 1
-
   if [ "$CARCH" = "x86_64" ]; then
     cat ../config.x86_64 >./.config
   else
@@ -61,7 +60,7 @@ package_kernel26() {
   pkgdesc="The Linux Kernel and modules"
   groups=('base')
   backup=(etc/mkinitcpio.d/${pkgname}.preset)
-  depends=('coreutils' 'kernel26-firmware>=2.6.32' 'module-init-tools' 'mkinitcpio>=0.5.20')
+  depends=('coreutils' 'kernel26-firmware>=2.6.33' 'module-init-tools' 'mkinitcpio>=0.6.3')
   # pwc, ieee80211 and hostap-driver26 modules are included in kernel26 now
   # nforce package support was abandoned by nvidia, kernel modules should cover everything now.
   # kernel24 support is dropped since glibc24
@@ -75,7 +74,6 @@ package_kernel26() {
 
   KARCH=x86
   cd ${srcdir}/linux-$_basekernel
-  # get kernel version
   _kernver="$(make kernelrelease)"
   mkdir -p ${pkgdir}/{lib/modules,boot}
   make INSTALL_MOD_PATH=${pkgdir} modules_install || return 1
@@ -106,6 +104,8 @@ package_kernel26() {
 
 package_kernel26-headers() {
   pkgdesc="Header files and scripts for building modules for kernel26"
+  cd ${srcdir}/linux-${_basekernel}/
+  make oldconfig && make prepare || return 1
   mkdir -p ${pkgdir}/lib/modules/${_kernver}
   cd ${pkgdir}/lib/modules/${_kernver}
   ln -sf ../../../usr/src/linux-${_kernver} build
@@ -117,11 +117,11 @@ package_kernel26-headers() {
   install -D -m644 .config \
     ${pkgdir}/usr/src/linux-${_kernver}/.config
   mkdir -p ${pkgdir}/usr/src/linux-${_kernver}/include
-
-  for i in acpi asm-{generic,x86} config linux math-emu media net pcmcia scsi sound trace video; do
+  
+  for i in acpi asm-generic config generated linux math-emu media net pcmcia scsi sound trace video; do
     cp -a include/$i ${pkgdir}/usr/src/linux-${_kernver}/include/
   done
-
+  
   # copy arch includes for external modules
   mkdir -p ${pkgdir}/usr/src/linux-${_kernver}/arch/x86
   cp -a arch/x86/include ${pkgdir}/usr/src/linux-${_kernver}/arch/x86/
@@ -180,7 +180,7 @@ package_kernel26-headers() {
   mkdir -p ${pkgdir}/usr/src/linux-${_kernver}/fs/xfs
   mkdir -p ${pkgdir}/usr/src/linux-${_kernver}/mm
   cp fs/xfs/xfs_sb.h ${pkgdir}/usr/src/linux-${_kernver}/fs/xfs/xfs_sb.h
-  # add headers vor virtualbox
+  # add headers for virtualbox
   # in reference to:
   # http://bugs.archlinux.org/task/14568
   cp -a include/drm $pkgdir/usr/src/linux-${_kernver}/include/
@@ -194,15 +194,17 @@ package_kernel26-headers() {
     cp $i ${pkgdir}/usr/src/linux-${_kernver}/$i
   done
 
-  cd ${pkgdir}/usr/src/linux-${_kernver}/include && ln -s asm-$KARCH asm
+  #cd ${pkgdir}/usr/src/linux-${_kernver}/include && ln -s asm-$KARCH asm
   # add header for aufs2-util
-  cp -a ${srcdir}/linux-$_basekernel/include/asm-generic/bitsperlong.h ${pkgdir}/usr/src/linux-${_kernver}/include/asm/
+  #mkdir -p ${pkgdir}/usr/src/linux-${_kernver}/include/asm
+  #cp -a ${srcdir}/linux-$_basekernel/include/asm-generic/bitsperlong.h ${pkgdir}/usr/src/linux-${_kernver}/include/asm/
 
   chown -R root.root ${pkgdir}/usr/src/linux-${_kernver}
   find ${pkgdir}/usr/src/linux-${_kernver} -type d -exec chmod 755 {} \;
   # remove unneeded architectures
   rm -rf ${pkgdir}/usr/src/linux-${_kernver}/arch/{alpha,arm,arm26,avr32,blackfin,cris,frv,h8300,ia64,m32r,m68k,m68knommu,mips,microblaze,mn10300,parisc,powerpc,ppc,s390,sh,sh64,sparc,sparc64,um,v850,xtensa}
 }
+
 
 package_kernel26-firmware() {
   pkgdesc="The included firmware files of the Linux Kernel"

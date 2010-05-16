@@ -11,11 +11,10 @@ license=('GPL')
 url="http://www.linuxfoundation.org/en/Net:Iputils"
 groups=('base')
 depends=('glibc')
-makedepends=('libxslt') # 'opensp'  'docbook-xsl'
+makedepends=('opensp' 'libxslt' 'docbook-xsl')
 conflicts=('netkit-base' 'arping' 'netkit-tftpd' 'traceroute')
 replaces=('netkit-base' 'traceroute')
-source=(#http://www.skbuff.net/iputils/$pkgname-s$pkgver.tar.bz2
-	http://borkware.net/~mark/sources/$pkgname-s$pkgver.tar.bz2
+source=(http://www.skbuff.net/iputils/$pkgname-s$pkgver.tar.bz2
         ftp://ftp.ee.lbl.gov/traceroute-$_traceroutever.tar.gz
 	permission-fix.patch)
 options=(!makeflags)

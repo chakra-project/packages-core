@@ -1,17 +1,16 @@
-# $Id: PKGBUILD 48163 2009-07-31 20:55:39Z tpowa $
+# $Id: PKGBUILD 76085 2010-04-07 18:00:10Z tpowa $
 # Maintainer: judd <jvinet@zeroflux.org>
 pkgname=cpio
-pkgver=2.10
-pkgrel=1
+pkgver=2.11
+pkgrel=2
 pkgdesc="A tool to copy files into or out of a cpio or tar archive"
 arch=(i686 x86_64)
 license=('GPL')
 url="http://www.gnu.org/software/cpio"
-groups=('base')
 depends=('glibc')
 source=(ftp://ftp.gnu.org/gnu/cpio/cpio-${pkgver}.tar.gz)
 install=cpio.install
-md5sums=('351ab3d38d8949913e478cc23b9d6ad4')
+md5sums=('1112bb6c45863468b5496ba128792f6c')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
@@ -26,4 +25,3 @@ build() {
   # remove infodir
   rm $pkgdir/usr/share/info/dir
 }
-
