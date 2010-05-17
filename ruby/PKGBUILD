@@ -3,6 +3,8 @@
 # Contributor: John Proctor <jproctor@prium.net>
 # Contributor: Jeramy Rutley <jrutley@gmail.com>
 
+# NOTE If fails to compile restart build without clearing src
+
 pkgname=('ruby' 'ruby-docs')
 pkgver=1.9.1_p378
 _pkgver=1.9.1-p378
@@ -11,7 +13,7 @@ pkgdesc="An object-oriented language for quick and easy programming"
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://www.ruby-lang.org/en/"
-makedepends=('gdbm' 'db' 'openssl' 'zlib' 'readline' 'tk')
+makedepends=('gdbm' 'db' 'openssl' 'zlib' 'readline') #'tk'
 source=("ftp://ftp.ruby-lang.org/pub/ruby/1.9/${pkgname}-${_pkgver}.tar.bz2"
         'openssl-1.0.patch')
 options=('!emptydirs')
@@ -31,7 +33,7 @@ package_ruby()
   depends=('gdbm' 'db' 'openssl' 'zlib' 'readline')
   provides=('rubygems' 'rake')
   conflicts=('rubygems' 'rake')
-  optdepends=('tk: for Ruby/TK')
+  #optdepends=('tk: for Ruby/TK')
 
   cd "${srcdir}/${pkgname}-${_pkgver}"
   make DESTDIR="${pkgdir}" install || return 1

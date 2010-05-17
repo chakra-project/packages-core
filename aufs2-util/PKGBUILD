@@ -5,9 +5,6 @@
 # maintainer (x86_64): Martin Sandsmark (PhinnFort) <sandsmark @ kdemod.ath.cx>
 # maintainer (x86_64): Phil Miller (Amnnon82) <philm @ chakra-project.org>
 
-# include global config
-source ../_buildsystem/${current_repo}-${_arch}_cfg.conf
-
 pkgname=aufs2-util
 pkgver=20100514
 pkgrel=1
@@ -20,7 +17,6 @@ makedepends=('aufs2>=2.6.33_20100514' 'kernel26-headers')
 replaces=('aufs-utils')
 source=($pkgname-$pkgver.tar.gz)
 md5sums=('411d4e94420d7b8c9a9bca620957292a')
-options=('!splithdr' '!splitdbg')
 
 build() {
   cd $srcdir/$pkgname-$pkgver || return 1

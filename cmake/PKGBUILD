@@ -12,8 +12,8 @@ arch=('i686' 'x86_64')
 license=('custom')
 url="http://www.cmake.org"
 depends=('expat' 'curl' 'gcc-libs' 'shared-mime-info')
-makedepends=('qt')
-optdepends=('qt: cmake-gui')
+#makedepends=('qt')
+#optdepends=('qt: cmake-gui')
 install=${pkgname}.install
 source=("http://www.cmake.org/files/v2.8/${pkgname}-${pkgver}.tar.gz")
 md5sums=('feadc2e5ebbfed0efc90178583503725')
@@ -24,7 +24,7 @@ build() {
 		--mandir=/share/man \
 		--docdir=/share/doc/cmake \
 		--system-libs \
-		--qt-gui \
+#		--qt-gui \
 		--parallel=2
 	make || return 1
 }
