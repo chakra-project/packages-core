@@ -1,0 +1,35 @@
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
+
+_origname=initscripts
+pkgname=chakra-initscripts
+pkgver=2010.05
+pkgrel=3
+pkgdesc="System initialization/bootup scripts"
+arch=('any')
+url="http://www.archlinux.org"
+license=('GPL')
+groups=('base')
+depends=('glibc' 'bash' 'awk' 'grep' 'coreutils' 'sed' 'udev>=139-1'
+         'net-tools' 'ncurses' 'kbd' 'findutils' 'sysvinit')
+install=initscripts.install
+source=(http://chakra-project.org/sources/initscripts/${_origname}-${pkgver}-${pkgrel}.tar.gz)
+md5sums=('6de41e3b3792d91a1f84abea73f16611')
+provides=('initscripts=2010.05')
+
+build() {
+	cd ${srcdir}/${_origname}-${pkgver}-${pkgrel}/
+
+	DESTDIR=$startdir/pkg ./install.sh
+	cp -rf ${startdir}/etc ${startdir}/pkg
+
+	#remove nasty .svn folders
+	cd ${startdir}/pkg
+	rm -rfv `find . -type d -name .svn`
+}

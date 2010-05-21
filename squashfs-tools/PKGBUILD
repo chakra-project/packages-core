@@ -1,0 +1,35 @@
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
+
+pkgname=squashfs-tools
+pkgver=4.0.lzma
+pkgrel=1
+pkgdesc="Tools for squashfs, a highly compressed read-only filesystem for Linux."
+url="http://squashfs.sourceforge.net"
+license=("GPL")
+arch=('i686' 'x86_64')
+depends=('zlib' 'glibc')
+source=(squashfs4.0-lzma-snapshot.tgz 
+	http://downloads.sourceforge.net/sevenzip/lzma465.tar.bz2
+	Makefile)
+
+build()
+{
+    cd $startdir/src/squashfs4.0-lzma-snapshot/$pkgname
+    #reduce memory requirements of unsquashfs to support installation on systems with 256 MB RAM 
+    sed -i -e 's/BUFFER_DEFAULT [0-9]*/BUFFER_DEFAULT 32/' $startdir/src/squashfs4.0-lzma-snapshot/$pkgname/unsquashfs.h
+    cp -f $srcdir/Makefile $srcdir/squashfs4.0-lzma-snapshot/$pkgname
+    make || return 1
+    mkdir -p $startdir/pkg/sbin
+    cp -a mksquashfs unsquashfs $startdir/pkg/sbin
+}
+md5sums=('a2e01bcd59a56cf17587d6481f341b64'
+         '29d5ffd03a5a3e51aef6a74e9eafb759'
+         '06a8f904515801c8a66c7b806b0f901a')
+
