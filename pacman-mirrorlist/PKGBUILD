@@ -36,4 +36,4 @@ build() {
   sed -i -e "s/@carch@/${CARCH}/g" $pkgdir/etc/pacman.d/mirrorlist
 }
 
-md5sums=('c215ef55e8746411ff2648522182ff52')
+md5sums=('b60b0aacd6f6ea4062fa29fe372be112')

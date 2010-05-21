@@ -7,5 +7,5 @@
 #Server = http://ftp.caliu.cat/pub/distribucions/chakra/repo/testing/$repo/@carch@
 
 # Germany
-#Server = http://konnektion.ath.cx/repo//$repo/@carch@
+#Server = http://konnektion.ath.cx/repo/$repo/@carch@
 
