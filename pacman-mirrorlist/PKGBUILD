@@ -1,10 +1,16 @@
-# $Id: PKGBUILD 66563 2010-01-31 21:48:51Z dan $
-# Maintainer: Dan McGee <dan@archlinux.org>
+#
+# Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=pacman-mirrorlist
-pkgver=20100131
+pkgver=20100521
 pkgrel=1
-pkgdesc="Arch Linux mirror list for use by pacman"
+pkgdesc="Chakra Linux mirror list for use by pacman"
 arch=('i686' 'x86_64')
 url="http://www.archlinux.org/pacman/"
 license=('GPL')
@@ -30,5 +36,4 @@ build() {
   sed -i -e "s/@carch@/${CARCH}/g" $pkgdir/etc/pacman.d/mirrorlist
 }
 
-md5sums=('f8a54e35a0f0fe64f8119fce02ad359e')
-sha256sums=('3eaecf8e8a07598dec21e28568b18d505cdcc9edc9a084b750f4f6eccfb2429d')
+md5sums=('c215ef55e8746411ff2648522182ff52')
