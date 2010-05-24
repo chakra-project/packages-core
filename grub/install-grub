@@ -116,8 +116,8 @@ dogrub() {
 			head -n $(cat /tmp/.menu.lst | grep -n '#-\*' | cut -d: -f 1) /tmp/.menu.lst >/boot/grub/menu.lst
 			rm -f /tmp/.menu.lst
 			echo "" >>/boot/grub/menu.lst
-			echo "# (0) Arch Linux" >>/boot/grub/menu.lst
-			echo "title  Arch Linux" >>/boot/grub/menu.lst
+			echo "# (0) Chakra Linux" >>/boot/grub/menu.lst
+			echo "title  Chakra Linux" >>/boot/grub/menu.lst
 			subdir=
 			if [ "$bootdev" != "" ]; then
 				grubdev=$(mapdev $bootdev)
@@ -131,8 +131,8 @@ dogrub() {
 			fi
 			echo "" >>/boot/grub/menu.lst
 			# adding fallback/full image
-			echo "# (1) Arch Linux" >>/boot/grub/menu.lst
-			echo "title  Arch Linux Fallback" >>/boot/grub/menu.lst
+			echo "# (1) Chakra Linux" >>/boot/grub/menu.lst
+			echo "title  Chakra Linux Fallback" >>/boot/grub/menu.lst
 			echo "root   $grubdev" >>/boot/grub/menu.lst
 			echo "kernel $subdir/$VMLINUZ root=$PART_ROOT ro" >>/boot/grub/menu.lst
 			if [ "$VMLINUZ" = "vmlinuz26" ]; then

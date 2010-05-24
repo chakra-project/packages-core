@@ -1,9 +1,15 @@
-# $Id: PKGBUILD 47861 2009-07-28 10:32:47Z ronald $
-# Maintainer: Ronald van Haren <ronald.archlinux.org>
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=grub
 pkgver=0.97
-pkgrel=16
+pkgrel=17
 pkgdesc="A GNU multiboot boot loader"
 arch=('i686' 'x86_64')
 license=('GPL')
@@ -24,8 +30,8 @@ source=(ftp://alpha.gnu.org/gnu/grub/grub-$pkgver.tar.gz
 backup=('boot/grub/menu.lst')
 install=grub.install
 md5sums=('cd3f3eb54446be6003156158d51f4884'
-         'a2098dc41fc3cb13e53179de2979d088'
-         '3182c4ae4963a16930bc772bba89dacf'
+         '91de3a16b282db26bf18176cb19442f5'
+         '2a8dd930bccf3600f63c53b890fff46d'
          'eb9d69c46af3a0667c1f651817d7f075'
          'ccd2d757e79e3a03dc19ede7391ed328'
          '826fdbf446067f9861baf9f6a69a4583'
