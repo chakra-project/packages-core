@@ -30,8 +30,8 @@ source=(ftp://alpha.gnu.org/gnu/grub/grub-$pkgver.tar.gz
 backup=('boot/grub/menu.lst')
 install=grub.install
 md5sums=('cd3f3eb54446be6003156158d51f4884'
-         '91de3a16b282db26bf18176cb19442f5'
-         '2a8dd930bccf3600f63c53b890fff46d'
+         'bd1ba64588c9305b766cb1a7f1287033'
+         'd0cf122be6d79428ac3f6a3aee47befd'
          'eb9d69c46af3a0667c1f651817d7f075'
          'ccd2d757e79e3a03dc19ede7391ed328'
          '826fdbf446067f9861baf9f6a69a4583'

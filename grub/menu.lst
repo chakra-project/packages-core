@@ -35,8 +35,8 @@ color light-blue/black light-cyan/blue
 #
 #-*
 
-# (0) Chakra Linux
-title  Chakra Linux  [/boot/vmlinuz26]
+# (0) Chakra GNU/Linux
+title  Chakra GNU/Linux  [/boot/vmlinuz26]
 root   (hd0,0)
 kernel /vmlinuz26 root=/dev/sda3 ro
 initrd /kernel26.img
