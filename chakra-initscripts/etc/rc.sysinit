@@ -359,7 +359,7 @@ COUNTRY=`get_country`
 
 		case "$COUNTRY" in
 		ast)
-		# Asturian 
+		# Asturian
 		LOCALE="ast_ES.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Madrid"
@@ -370,7 +370,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		be)
-		# Belarusian 
+		# Belarusian
 		LOCALE="be_BY.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Brussels"
@@ -381,7 +381,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"be"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		bg)
-		# Bulgarian 
+		# Bulgarian
 		LOCALE="bg_BG.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Sofia"
@@ -392,7 +392,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"bg"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		ca)
-		# Catalan 
+		# Catalan
 		LOCALE="ca_ES.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Madrid"
@@ -403,7 +403,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		cs)
-		# Czech 
+		# Czech
 		LOCALE="cs_CZ.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Prague"
@@ -414,7 +414,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"cz"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		de)
-		# German 
+		# German
 		LOCALE="de_DE.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Berlin"
@@ -425,7 +425,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"de"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		dk)
-		# Danish 
+		# Danish
 		LOCALE="da_DK.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Copenhagen"
@@ -447,7 +447,7 @@ COUNTRY=`get_country`
                 sed -i "/input.xkb.layout/ s/us/"us"/" /etc/hal/fdi/policy/10-keymap.fdi
                 ;;
 		enus)
-		# English 
+		# English
 		LOCALE="en_US.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Canada/Pacific"
@@ -458,7 +458,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"us"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		es)
-		# Spain 
+		# Spain
 		LOCALE="es_ES.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Madrid"
@@ -469,7 +469,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		eu)
-		# Basque 
+		# Basque
 		LOCALE="eu_ES.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Madrid"
@@ -480,7 +480,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		fi)
-		# Finland 
+		# Finland
 		LOCALE="fi_FI.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Helsinki"
@@ -491,7 +491,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"fi"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		fr)
-		# France 
+		# France
 		LOCALE="fr_FR.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Paris"
@@ -502,7 +502,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"fr"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		gl)
-		# Galician 
+		# Galician
 		LOCALE="gl_ES.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Madrid"
@@ -513,7 +513,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		hu)
-		# Hungary 
+		# Hungary
 		LOCALE="hu_HU.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Budapest"
@@ -524,7 +524,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"hu"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		hr)
-		# Croatian 
+		# Croatian
 		LOCALE="hr_HR.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Zagreb"
@@ -535,7 +535,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"hr"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		it)
-		# Italy 
+		# Italy
 		LOCALE="it_IT.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Rome"
@@ -546,7 +546,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"it"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		ja)
-		# Japanese 
+		# Japanese
 		LOCALE="ja_JP.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Asia/Tokyo"
@@ -557,7 +557,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"us"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		nl)
-		# Dutch 
+		# Dutch
 		LOCALE="nl_NL.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Amsterdam"
@@ -568,7 +568,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"us"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		no)
-		# Norway 
+		# Norway
 		LOCALE="nb_NO.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Oslo"
@@ -579,7 +579,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"no"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		pl)
-		# Poland 
+		# Poland
 		LOCALE="pl_PL.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Warsaw"
@@ -590,7 +590,7 @@ COUNTRY=`get_country`
 		sed -i "/input.xkb.layout/ s/us/"pl"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
                 ptbr)
-                # Poland 
+                # Poland
                 LOCALE="pt_BR.utf8"
                 HARDWARECLOCK="localtime"
                 TIMEZONE="America/Belem"
@@ -601,7 +601,7 @@ COUNTRY=`get_country`
                 sed -i "/input.xkb.layout/ s/us/"pt"/" /etc/hal/fdi/policy/10-keymap.fdi
                 ;;
 		ru)
-		# Russia 
+		# Russia
 		LOCALE="ru_RU.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Moscow"
@@ -655,8 +655,19 @@ COUNTRY=`get_country`
 		cp -f /usr/share/hal/fdi/policy/10osvendor/10-keymap.fdi /etc/hal/fdi/policy/10-keymap.fdi
 		sed -i "/input.xkb.layout/ s/us/"trq"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
+		vcia)
+		# Catalan (valencia)
+		LOCALE="ca_ES.utf8@valencia"
+		HARDWARECLOCK="localtime"
+		TIMEZONE="Europe/Madrid"
+		KEYMAP="es"
+		XKEYMAP="es"
+		# add HAL config for Xorg input stuff
+		cp -f /usr/share/hal/fdi/policy/10osvendor/10-keymap.fdi /etc/hal/fdi/policy/10-keymap.fdi
+		sed -i "/input.xkb.layout/ s/us/"es"/" /etc/hal/fdi/policy/10-keymap.fdi
+		;;
                 zhcn)
-                # Simplified Chinese 
+                # Simplified Chinese
                 LOCALE="zh_CN.utf8"
                 HARDWARECLOCK="localtime"
                 TIMEZONE="Asia/Shanghai"
@@ -667,7 +678,7 @@ COUNTRY=`get_country`
                 sed -i "/input.xkb.layout/ s/us/"us"/" /etc/hal/fdi/policy/10-keymap.fdi
                 ;;
 		*)
-		# American 
+		# American
 		LOCALE="en_US.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Canada/Pacific"
