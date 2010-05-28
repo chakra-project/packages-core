@@ -20,7 +20,7 @@ get_file() {
     cd ${SRCDEST}
     [ ! -f ${file} ] && wget -c ${1}
     cd ${startdir}/src
-    ln -s ${SRCDEST}/${file} .
+    ln -s ../../_sources/${file} .
   else
     cd ${startdir}/src
     ln -s ../patches/${file} .
@@ -28,7 +28,7 @@ get_file() {
   cd ${OPWD}
 }
 
-source ../_buildsystem/chakra-${_arch}_makepkg.conf
+source ../_buildscripts/core-testing-${_arch}-makepkg.conf
 source PATCHCFG
 
 export SRCNAME

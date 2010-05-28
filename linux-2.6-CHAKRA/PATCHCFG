@@ -3,14 +3,14 @@ SRC="ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.33.tar.bz2"
 # Original source directory
 SRCORIG="linux-2.6.33"
 # Our source directory
-SRCNAME="linux-2.6.33-ARCH"
+SRCNAME="linux-2.6.33-CHAKRA"
 # Patches:
 #   URL%patchlevel
 #  or
 #   filename%patchlevel (file must be in patches/ subdirectory)
 PATCHES=(
          # add upstream patch from 2.6.33 series
-         ftp://ftp.kernel.org/pub/linux/kernel/v2.6/patch-2.6.33.4.bz2%1
+         http://www.kernel.org/pub/linux/kernel/v2.6/patch-2.6.33.5.bz2%1
 
          # add latest fixes from stable queue, if needed
          # http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git
@@ -31,7 +31,7 @@ PATCHES=(
          0009-Squashfs-force-lzma-wrapper-to-be-retained.patch%1
         )
 # Name of the resulting patch (will be bzipped afterwards)
-PATCHNAME="patch-2.6.33.4-1-CHAKRA"
+PATCHNAME="patch-2.6.33.5-1-CHAKRA"
 
 # Run this before applying patches
 pre_apply() {
@@ -41,14 +41,9 @@ pre_apply() {
 # Run this after applying patches
 post_apply() {
   # remove the extraversion from Makefile
-  # this ensures our kernel version is always 2.6.XX-ARCH
+  # this ensures our kernel version is always 2.6.XX-CHAKRA
   # this way, minor kernel updates will not break external modules
   sed -i 's|^EXTRAVERSION = .*$|EXTRAVERSION = |g' Makefile
-
-  # Add Arch logo!
-  cp ${startdir}/patches/logo_linux_clut224.ppm drivers/video/logo/
-  cp ${startdir}/patches/logo_linux_mono.pbm drivers/video/logo/
-  cp ${startdir}/patches/logo_linux_vga16.ppm drivers/video/logo/
 
   # Kill some files
   find . -name '*~' -exec rm -f {} \; 2>/dev/null

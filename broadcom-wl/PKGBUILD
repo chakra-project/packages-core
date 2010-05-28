@@ -2,7 +2,7 @@
 
 pkgname=broadcom-wl
 pkgver=5.60.48.36 
-pkgrel=2
+pkgrel=3
 pkgdesc="Broadcom 802.11abg Networking Drivers"
 arch=('i686' 'x86_64')
 [ "$CARCH" = "i686" ] && ARCH=x86_32

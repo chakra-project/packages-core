@@ -1,10 +1,16 @@
-#$Id: PKGBUILD 70587 2010-02-27 13:11:26Z tpowa $
-#Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=ndiswrapper
-_kernver=2.6.33-ARCH
+_kernver=2.6.33-CHAKRA
 pkgver=1.56
-pkgrel=2
+pkgrel=3
 pkgdesc="Module for NDIS (Windows Network Drivers) drivers supplied by vendors. For stock arch 2.6 kernel."
 license=('GPL')
 arch=(i686 x86_64)

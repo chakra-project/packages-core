@@ -1,12 +1,18 @@
-# $Id: PKGBUILD 60356 2009-12-03 23:38:44Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
+
 pkgbase="kernel26"
-pkgname=('kernel26' 'kernel26-firmware' 'kernel26-headers') # Build stock -ARCH kernel
+pkgname=('kernel26' 'kernel26-firmware' 'kernel26-headers') # Build stock -CHAKRA kernel
 # pkgname=kernel26-custom       # Build kernel with a different name
 _kernelname=${pkgname#kernel26}
 _basekernel=2.6.33
-pkgver=${_basekernel}.4
+pkgver=${_basekernel}.5
 pkgrel=1
 _patchname="patch-${pkgver}-1-CHAKRA"
 arch=(i686 x86_64)
@@ -19,15 +25,14 @@ source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
         # standard config files for mkinitcpio ramdisk
         kernel26.preset)
 md5sums=('c3883760b18d50e8d78819c54d579b00'
-         '4985965d86a3858cab635c7eb1660d41'
-         '0149294fda983d0a4658b9e1a21e8956'
-         '1f24529018de11b9a9f4f30041bd9c0f'
+         'd06a205390f7a815a56bced9cea574fe'
+         '515db189443ae3a30445b38bb95eb91e'
+         'f653903dcddc6e466c5a4e4d8a4e376e'
          '25584700a0a679542929c4bed31433b6')
 
 build() {
   cd ${srcdir}/linux-$_basekernel
-  # Add -ARCH patches
-  # See http://projects.archlinux.org/linux-2.6-ARCH.git/
+  # Add -CHAKRA patches
   patch -Np1 -i ${srcdir}/${_patchname} || return 1
   if [ "$CARCH" = "x86_64" ]; then
     cat ../config.x86_64 >./.config
