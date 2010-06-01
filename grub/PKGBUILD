@@ -45,7 +45,7 @@ build() {
   cd $srcdir/$pkgname-$pkgver
 
   #set destination architecture here
-  DESTARCH="i686"
+  DESTARCH="$_arch"
   #DESTARCH="x86_64"
   # optimizations break the build -- disable them
   # adding special devices to grub, patches are from fedora
