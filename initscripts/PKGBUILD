@@ -23,7 +23,7 @@ optdepends=('bridge-utils: Network bridging support'
             'wireless_tools: Wireless networking')
 install=initscripts.install
 source=(http://chakra-project.org/sources/initscripts/${pkgname}-${pkgver}-${pkgrel}.tar.gz)
-md5sums=('f6b9c2b1e70c6c781f9e4c53adbe8017')
+md5sums=('2f090bbc8b22cbd646c844b8e8e54841')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}-${pkgrel}/
