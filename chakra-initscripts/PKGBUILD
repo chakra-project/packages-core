@@ -10,7 +10,7 @@ source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 _origname=initscripts
 pkgname=chakra-initscripts
 pkgver=2010.05
-pkgrel=5
+pkgrel=7
 pkgdesc="System initialization/bootup scripts"
 arch=('any')
 url="http://www.chakra-project.org"
@@ -20,7 +20,7 @@ depends=('glibc' 'bash' 'awk' 'grep' 'coreutils' 'sed' 'udev>=139-1'
          'net-tools' 'ncurses' 'kbd' 'findutils' 'sysvinit')
 install=initscripts.install
 source=(http://chakra-project.org/sources/initscripts/${_origname}-${pkgver}-${pkgrel}.tar.gz)
-md5sums=('517678200cc3ae87ba2767283c884536')
+md5sums=('f6b9c2b1e70c6c781f9e4c53adbe8017')
 provides=('initscripts=2010.05')
 conflicts=('initscripts')
 

@@ -1,8 +1,15 @@
-# Maintainer: Phil Miller <philm@chakra-project.org>
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=initscripts
 pkgver=2010.05
-pkgrel=5
+pkgrel=7
 pkgdesc="System initialization/bootup scripts"
 arch=('i686' 'x86_64')
 url="http://www.chakra-project.org"
@@ -16,7 +23,7 @@ optdepends=('bridge-utils: Network bridging support'
             'wireless_tools: Wireless networking')
 install=initscripts.install
 source=(http://chakra-project.org/sources/initscripts/${pkgname}-${pkgver}-${pkgrel}.tar.gz)
-md5sums=('517678200cc3ae87ba2767283c884536')
+md5sums=('f6b9c2b1e70c6c781f9e4c53adbe8017')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}-${pkgrel}/
