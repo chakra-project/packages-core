@@ -9,7 +9,7 @@ source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=initscripts
 pkgver=2010.05
-pkgrel=7
+pkgrel=8
 pkgdesc="System initialization/bootup scripts"
 arch=('i686' 'x86_64')
 url="http://www.chakra-project.org"
@@ -23,7 +23,7 @@ optdepends=('bridge-utils: Network bridging support'
             'wireless_tools: Wireless networking')
 install=initscripts.install
 source=(http://chakra-project.org/sources/initscripts/${pkgname}-${pkgver}-${pkgrel}.tar.gz)
-md5sums=('2f090bbc8b22cbd646c844b8e8e54841')
+md5sums=('e9e11d508519eb5a20db160ed95fae53')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}-${pkgrel}/
