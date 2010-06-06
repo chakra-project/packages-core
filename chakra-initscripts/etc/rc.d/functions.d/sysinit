@@ -5,10 +5,13 @@
 f_header ()
 {
     echo " "
-    printhl "Chakra Linux\n"
+    printhl "Chakra GNU/Linux\n"
     printhl "${C_H2}http://www.chakra-project.org"
-    printhl "Copyright 2006-2009 Jan Mette"
-    printhl "Copyright 2010 Philip Müller"
+    printhl "Copyright 2006-2010 Chakra Developers Team"
+    printhl " "
+    printhl "based on Arch Linux\n"
+    printhl "Copyright 2002-2007 Judd Vinet"
+    printhl "Copyright 2007-2010 Aaron Griffin"
     printhl "Distributed under the GNU General Public License (GPL)"
     printsep
 }
