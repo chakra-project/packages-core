@@ -1,11 +1,26 @@
 #
 # Chakra Linux repository mirrorlist
-# Generated on 2010-05-21
+# Generated on 2010-06-20
 #
+
+# Germany
+#Server = http://chakra-project.org/repo/newbase/$repo/@carch@
+#Server = http://mirror.selfnet.de/kdemod/newbase/$repo/@carch@
+#Server = ftp://mirror.selfnet.de/kdemod/newbase/$repo/@carch@
+
+# Kazakhstan
+#Server = http://kdemod.archlinux.kz/newbase/$repo/@carch@
+
+# Norway
+#Server = http://kdemod.iskrembilen.com/newbase/$repo/@carch@
+
+# Switzerland
+#Server = http://archlinux.puzzle.ch/kdemod/newbase/$repo/@carch@
 
 # Spain
 #Server = http://ftp.caliu.cat/pub/distribucions/chakra/repo/testing/$repo/@carch@
 
-# Germany
-#Server = http://konnektion.ath.cx/repo/$repo/@carch@
+# United States
+#Server = http://mirror.rit.edu/kdemod/newbase/$repo/@carch@
+
 

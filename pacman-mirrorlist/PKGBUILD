@@ -8,7 +8,7 @@
 source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=pacman-mirrorlist
-pkgver=20100521
+pkgver=20100620
 pkgrel=1
 pkgdesc="Chakra Linux mirror list for use by pacman"
 arch=('i686' 'x86_64')
@@ -36,4 +36,4 @@ build() {
   sed -i -e "s/@carch@/${CARCH}/g" $pkgdir/etc/pacman.d/mirrorlist
 }
 
-md5sums=('b60b0aacd6f6ea4062fa29fe372be112')
+md5sums=('8fad61afdc7e5a96d4549cac7b90c4e2')
