@@ -13,7 +13,7 @@ pkgname=('kernel26' 'kernel26-firmware' 'kernel26-headers') # Build stock -CHAKR
 _kernelname=${pkgname#kernel26}
 _basekernel=2.6.33
 pkgver=${_basekernel}.5
-pkgrel=3
+pkgrel=4
 _patchname="patch-${pkgver}-1-CHAKRA"
 _reiser4="reiser4-for-${_basekernel}.patch.bz2"
 _toi="tuxonice-3.1-for-head.patch.bz2"
@@ -39,8 +39,8 @@ md5sums=('c3883760b18d50e8d78819c54d579b00'
          '49da31ea1e6c3ae65f954cd5fc8fcc4e'
          'c6e0b8c1876794118584a7dedaaeb604'
          '5d06361612fd2960a0fc9e1f5a2648d6'
-         '2cecd58726eca9307ee528bf183ddb8b'
-         '477c6f86ce571cf60ac7538ef13ff359'
+         'ad0024cd2ebcbfed9741b3bd29f2b8cc'
+         'd692e631e3ccc2caa04fe094d3c8d9a4'
          '25584700a0a679542929c4bed31433b6')
 
 build() {
