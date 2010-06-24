@@ -18,7 +18,7 @@
 #Server = http://archlinux.puzzle.ch/kdemod/newbase/$repo/@carch@
 
 # Spain
-#Server = http://ftp.caliu.cat/pub/distribucions/chakra/repo/testing/$repo/@carch@
+#Server = http://ftp.caliu.cat/pub/distribucions/chakra/repo/newbase/$repo/@carch@
 
 # United States
 #Server = http://mirror.rit.edu/kdemod/newbase/$repo/@carch@
