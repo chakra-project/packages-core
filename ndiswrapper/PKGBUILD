@@ -10,7 +10,7 @@ source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 pkgname=ndiswrapper
 _kernver=2.6.33-CHAKRA
 pkgver=1.56
-pkgrel=3
+pkgrel=4
 pkgdesc="Module for NDIS (Windows Network Drivers) drivers supplied by vendors. For stock arch 2.6 kernel."
 license=('GPL')
 arch=(i686 x86_64)
