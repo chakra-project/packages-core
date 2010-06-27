@@ -649,11 +649,11 @@ COUNTRY=`get_country`
 		LOCALE="tr_TR.utf8"
 		HARDWARECLOCK="localtime"
 		TIMEZONE="Europe/Istanbul"
-		KEYMAP="trq"
+		KEYMAP="tr"
 		XKEYMAP="trq"
 		# add HAL config for Xorg input stuff
 		cp -f /usr/share/hal/fdi/policy/10osvendor/10-keymap.fdi /etc/hal/fdi/policy/10-keymap.fdi
-		sed -i "/input.xkb.layout/ s/us/"trq"/" /etc/hal/fdi/policy/10-keymap.fdi
+		sed -i "/input.xkb.layout/ s/us/"tr"/" /etc/hal/fdi/policy/10-keymap.fdi
 		;;
 		vcia)
 		# Catalan (valencia)
