@@ -1,5 +1,6 @@
 post_install() {
-  KERNEL_VERSION=$(uname -r)
+  KERNEL_VERSION=`pacman -Qf kernel26 | cut -c10-15 | sed 's/kernel26 //g'`-CHAKRA
+  #KERNEL_VERSION=$(uname -r)
   depmod $KERNEL_VERSION
 
   echo ""
