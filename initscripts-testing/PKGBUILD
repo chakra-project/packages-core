@@ -21,6 +21,7 @@ depends=('glibc' 'bash' 'awk' 'grep' 'coreutils' 'sed' 'udev>=157-1'
 optdepends=('bridge-utils: Network bridging support'
             'dhcpcd: DHCP network configuration'
             'wireless_tools: Wireless networking')
+replaces=('initscripts')
 conflicts=('initscripts')
 provides=("initscripts=${pkgver}")
 install=initscripts.install
