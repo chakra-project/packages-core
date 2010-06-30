@@ -13,7 +13,7 @@ pkgname=('kernel26' 'kernel26-firmware' 'kernel26-headers') # Build stock -CHAKR
 _kernelname=${pkgname#kernel26}
 _basekernel=2.6.33
 pkgver=${_basekernel}.5
-pkgrel=7
+pkgrel=8
 _patchname="patch-${pkgver}-1-CHAKRA"
 arch=(i686 x86_64)
 license=('GPL2')
@@ -26,8 +26,8 @@ source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
         kernel26.preset)
 md5sums=('c3883760b18d50e8d78819c54d579b00'
          'd06a205390f7a815a56bced9cea574fe'
-         'efdc6e5e399dc7fe8344d9f31f6ab1c9'
-         '45e8aa72fea76e0adffabb4b9ca6a144'
+         '6a2735f11eb3b0dbc72fa3943bd4f4cf'
+         '59b792a5dc8e7a6d4310059983abf928'
          '25584700a0a679542929c4bed31433b6')
 
 build() {
