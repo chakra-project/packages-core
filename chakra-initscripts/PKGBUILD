@@ -9,23 +9,23 @@ source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 _origname=initscripts
 pkgname=chakra-initscripts
-pkgver=2010.05
-pkgrel=9
+pkgver=2010.06
+pkgrel=2
 pkgdesc="System initialization/bootup scripts"
 arch=('any')
 url="http://www.chakra-project.org"
 license=('GPL')
 groups=('base')
-depends=('glibc' 'bash' 'awk' 'grep' 'coreutils' 'sed' 'udev>=139-1'
+depends=('glibc' 'bash' 'awk' 'grep' 'coreutils' 'sed' 'udev>=157-1'
          'net-tools' 'ncurses' 'kbd' 'findutils' 'sysvinit')
 install=initscripts.install
-source=(http://chakra-project.org/sources/initscripts/${_origname}-${pkgver}-8.tar.gz)
-md5sums=('e9e11d508519eb5a20db160ed95fae53')
-provides=('initscripts=2010.05')
+source=(http://chakra-project.org/sources/initscripts/initscripts-${pkgver}-${pkgrel}.tar.gz)
+md5sums=('6e2208b8040bba656ec1675069e713d1')
+provides=('initscripts=2010.06')
 conflicts=('initscripts')
 
 build() {
-	cd ${srcdir}/${_origname}-${pkgver}-8/
+	cd ${srcdir}/${_origname}-${pkgver}-${pkgrel}/
 
 	DESTDIR=$startdir/pkg ./install.sh
 	cp -rf ${startdir}/etc ${startdir}/pkg
