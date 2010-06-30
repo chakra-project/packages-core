@@ -26,8 +26,8 @@ source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
         kernel26.preset)
 md5sums=('c3883760b18d50e8d78819c54d579b00'
          'd06a205390f7a815a56bced9cea574fe'
-         '515db189443ae3a30445b38bb95eb91e'
-         'f653903dcddc6e466c5a4e4d8a4e376e'
+         '5162ac22c25fa5031970a242561927d7'
+         'd9fd7f8db568d0b43ec6e2c9facd2c1d'
          '25584700a0a679542929c4bed31433b6')
 
 build() {
