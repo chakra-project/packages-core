@@ -3,7 +3,7 @@
 
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
-pkgver=2.02.70
+pkgver=2.02.69
 _pkgverdm=1.02.45
 _pkgverlvm=${pkgver}
 pkgrel=1
@@ -15,7 +15,7 @@ conflicts=('mkinitcpio<0.5.99')
 source=(ftp://sources.redhat.com/pub/lvm2/LVM2.${_pkgverlvm}.tgz
         lvm2_install
         lvm2_hook)
-md5sums=('39c26d5a821754cc347d7a19e82d4a24' 'f781c9f5dd4f9934952c687b73d26a18'\
+md5sums=('2463f4ee7da9015af4b62a4e691fff76' 'f781c9f5dd4f9934952c687b73d26a18'\
          '95bed25bdbc2c2d8500e7a07aeff7f65')
                                           
 build() {
