@@ -1,23 +1,29 @@
-# $Id: PKGBUILD 77834 2010-04-18 10:43:41Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
-# Committer: Judd Vinet <jvinet@zeroflux.org>
+#
+# Chakra Packages for Chakra, part of chakra-project.org
+#
+# maintainer (i686): Phil Miller <philm[at]chakra-project[dog]org>
+# maintainer (x86_64): Manuel Tortosa <manutortosa[at]chakra-project[dot]org>
+
+# include global config
+source ../_buildscripts/${current_repo}-${_arch}-cfg.conf
 
 pkgname=pkgconfig
-pkgver=0.23
-pkgrel=2
+pkgver=0.25
+pkgrel=1
 pkgdesc="A system for managing library compile/link flags"
 arch=('i686' 'x86_64')
 url="http://pkgconfig.freedesktop.org/wiki/"
 license=('GPL')
 groups=('base-devel')
 depends=('glibc')
+provides=("pkg-config=${pkgver}")
 source=(http://pkgconfig.freedesktop.org/releases/pkg-config-${pkgver}.tar.gz)
-md5sums=('d922a88782b64441d06547632fd85744')
+md5sums=('a3270bab3f4b69b7dc6dbdacbcae9745')
 
 build() {
   cd ${srcdir}/pkg-config-${pkgver}
   ./configure --prefix=/usr
-  make || return 1
+  make
 }
 
 package() {
